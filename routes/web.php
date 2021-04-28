@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MovieController;
+use App\Http\Controllers\SeriesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','MovieController@index');
+Route::resource('movie', 'MovieController');
+Route::resource('serie','SeriesController');
+Route::resource('tag','TagController');

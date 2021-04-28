@@ -10,6 +10,6 @@ class MovieController extends Controller
     //
     public function index(){
         $movies = Movie::all();
-        return view('movie.index',compact('movies'));
+        return view('admin.movies.index',compact('movies'));
     }
 }
