@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Movie;
 use App\Year;
 use App\Country;
+use App\Tag;
 
 class MovieController extends Controller
 {
@@ -25,8 +26,9 @@ class MovieController extends Controller
         //
         $years = Year::all();
         $countries = Country::all();
+        $tags = Tag::all();
 
-        return view('admin.movies.new',compact('years','countries'));
+        return view('admin.movies.new',compact('years','countries','tags'));
     }
 
     /**
@@ -37,7 +39,7 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-
+        dd($request->tags);
         if($request->movie_image) {
             $fileName = time().'_'.$request->movie_image->getClientOriginalName();
             $filePath = $request->file('movie_image')->storeAs('images/movies', $fileName, 'public');

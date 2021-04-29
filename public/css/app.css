@@ -14039,6 +14039,11 @@ a.text-dark:focus {
   margin-top: 1em;
 }
 
+.input-form .input-wrapper .checkbox {
+  width: 1em;
+  height: 1em;
+}
+
 .store-btn-wrapper {
   margin-top: 3em;
   justify-content: flex-end;

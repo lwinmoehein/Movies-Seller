@@ -26,7 +26,7 @@
     </section>
     <section class="serie-list">
        @foreach ($series as $serie)
-            <div class="serie-item" style="background-image: url({{url('storage/images/series/'.$serie->poster)}})">
+            <div class="serie-item" style="background-image: url({{url('storage/images/Series/'.$serie->poster)}})">
                 <div class="title">{{$serie->title}}</div>
                 <div class="year">Year:{{$serie->year}}</div>
             </div>
