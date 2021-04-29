@@ -14124,6 +14124,10 @@ a.text-dark:focus {
   filter: blur(0.1px);
 }
 
+.admin-menu i {
+  margin-right: 1em;
+}
+
 :root {
   --page-header-bgColor: #242e42;
   --page-header-bgColor-hover: #1d2636;

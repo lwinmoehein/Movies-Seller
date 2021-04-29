@@ -15,4 +15,7 @@ class Serie extends Model
         'complete_ongoing','poster','detail','url',
 
     ];
+    public function tags(){
+        return $this->belongsToMany(Tag::class, 'tagseries', 'series_id', 'tag_id');
+    }
 }

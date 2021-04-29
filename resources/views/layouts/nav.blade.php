@@ -15,17 +15,13 @@
         </li>
         <li>
             <a href="{{route('serie.index')}}">
-                <svg>
-                    <use xlink:href="#pages"></use>
-                </svg>
+                <i class="fa fa-film"></i>
                 <span>Series</span>
             </a>
         </li>
         <li>
             <a href="{{route('movie.index')}}">
-                <svg>
-                    <use xlink:href="#users"></use>
-                </svg>
+                <i class="fa fa-film"></i>
                 <span>Movies</span>
             </a>
         </li>

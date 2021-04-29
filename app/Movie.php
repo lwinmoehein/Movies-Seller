@@ -12,4 +12,8 @@ class Movie extends Model
     protected $fillable = [
         'title','code_no','img_name','year','country_id','description','file_size','artist','url','quality'
     ];
+
+    public function tags(){
+        return $this->belongsToMany(Tag::class, 'tagmovies', 'movie_id', 'tag_id');
+    }
 }
