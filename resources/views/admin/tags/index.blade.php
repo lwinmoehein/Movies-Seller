@@ -22,7 +22,7 @@
         </div>
     </section>
     <section class="add-section">
-        <button class="btn add-btn"><a href="{{route('tag.create')}}"> New Btn<i class="ml-2 fa fa-plus"></i></a></button>
+        <button class="btn add-btn"><a href="{{route('tag.create')}}">Create New Tag<i class="ml-2 fa fa-plus"></i></a></button>
     </section>
     <section class="tag-list">
        @foreach ($tags as $tag)
@@ -35,5 +35,6 @@
             </div>
        @endforeach
     </section>
+    <div class="pagination-wrapper">{{$tags->links()}}</div>
 </div>
 @endsection

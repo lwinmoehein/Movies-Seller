@@ -14000,14 +14000,52 @@ a.text-dark:focus {
   flex-flow: column;
 }
 
+.pagination-wrapper {
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
+}
+
+.add-btn {
+  background-color: #7889a4;
+  color: white;
+  font-weight: bolder;
+}
+
+.input-form {
+  margin-top: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-form .input-wrapper {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.input-form .input-wrapper input {
+  width: 40em;
+  padding: 1em;
+}
+
+.store-btn-wrapper {
+  margin-top: 3em;
+  justify-content: flex-end;
+  display: flex;
+}
+
 .tags .tag-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .tags .tag-list .tag-item {
-  margin: 2em;
   position: relative;
+  height: 50px;
+  width: 130px;
+  margin: 1em;
 }
 
 .tags .tag-list .tag-item .tag-title {
@@ -14018,8 +14056,11 @@ a.text-dark:focus {
 }
 
 .tags .tag-list .tag-item img {
-  max-width: 100%;
-  max-height: 100%;
+  max-height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 130px;
+  height: 50px;
   -moz-filter: blur(0.1px);
   -o-filter: blur(0.1px);
   -ms-filter: blur(0.1px);

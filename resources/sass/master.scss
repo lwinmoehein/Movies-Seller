@@ -10,3 +10,32 @@
         flex-flow: column;
     }
 }
+.pagination-wrapper {
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+}
+.add-btn {
+    background-color: $primary-color;
+    color: white;
+    font-weight: bolder;
+}
+.input-form {
+    margin-top: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .input-wrapper {
+        width: fit-content;
+
+        input {
+            width: 40em;
+            padding: 1em;
+        }
+    }
+}
+.store-btn-wrapper{
+    margin-top: 3em;
+    justify-content: flex-end;
+    display: flex;
+}

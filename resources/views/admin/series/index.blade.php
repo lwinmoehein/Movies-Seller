@@ -26,6 +26,6 @@
             <div class="movie-item">{{$serie->title}}</div>
        @endforeach
     </section>
-    <div>{{$series->links()}}</div>
+    <div class="pagination-wrapper"><div>{{$series->links()}}</div></div>
 </div>
 @endsection
