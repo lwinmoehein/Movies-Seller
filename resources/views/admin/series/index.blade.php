@@ -21,6 +21,9 @@
             </div>
         </div>
     </section>
+    <section class="add-section">
+        <button class="btn add-btn"><a href="{{route('serie.create')}}">Create New Serie<i class="ml-2 fa fa-plus"></i></a></button>
+    </section>
     <section class="movie-list">
        @foreach ($series as $serie)
             <div class="movie-item">{{$serie->title}}</div>

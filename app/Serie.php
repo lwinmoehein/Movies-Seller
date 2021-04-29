@@ -8,4 +8,11 @@ class Serie extends Model
 {
     //
     public $table='series';
+
+    protected $fillable = [
+        'code_no','title','country_id',
+        'year','season','episode','file_size',
+        'complete_ongoing','poster','detail','url',
+
+    ];
 }
