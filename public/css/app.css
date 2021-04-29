@@ -14045,6 +14045,54 @@ a.text-dark:focus {
   display: flex;
 }
 
+.movies .movie-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.movies .movie-list .movie-item {
+  height: 100px;
+}
+
+.series .serie-list {
+  display: flex;
+  flex-wrap: wrap !important;
+  flex-flow: row;
+}
+
+.series .serie-list .serie-item {
+  width: 200px;
+  height: 100px;
+  position: relative;
+  background-color: #7889a4;
+  margin: 1em;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+.series .serie-list .serie-item .title {
+  top: 1%;
+  left: 3%;
+  position: absolute;
+  color: white;
+  font-weight: bolder;
+}
+
+.series .serie-list .serie-item .year {
+  bottom: 1%;
+  right: 3%;
+  position: absolute;
+  color: #7889a4;
+  font-weight: bolder;
+}
+
+.series .serie-list .serie-item img {
+  width: 200px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .tags .tag-list {
   display: flex;
   flex-wrap: wrap;
@@ -14630,13 +14678,4 @@ body {
 
 /* FOOTER
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.movies .movie-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.movies .movie-list .movie-item {
-  height: 100px;
-}
 

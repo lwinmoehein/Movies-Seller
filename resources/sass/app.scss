@@ -560,13 +560,4 @@ body {
 
 /* FOOTER
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.movies {
-    .movie-list{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
 
-        .movie-item{
-            height: 100px;
-        }
-    }
-}

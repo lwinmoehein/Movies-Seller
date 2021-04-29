@@ -46,3 +46,50 @@
     justify-content: flex-end;
     display: flex;
 }
+.movies {
+    .movie-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .movie-item{
+            height: 100px;
+        }
+    }
+}
+.series {
+    .serie-list{
+        display: flex;
+        flex-wrap: wrap !important;
+        flex-flow: row;
+        .serie-item {
+            width: 200px;
+            height: 100px;
+            position: relative;
+            background-color: $primary-color;
+            margin: 1em;
+            border-radius: 5px;
+            padding: 1em;
+
+            .title {
+                top: 1%;
+                left: 3%;
+                position: absolute;
+                color: white;
+                font-weight: bolder;
+            }
+            .year {
+                bottom: 1%;
+                right: 3%;
+                position: absolute;
+                color: $primary-color;
+                font-weight: bolder;
+            }
+
+            img {
+                width: 200px;
+                height: 100px;
+                object-fit: cover;
+            }
+        }
+    }
+}

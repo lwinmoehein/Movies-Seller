@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="movies">
+<div class="series">
     <section class="search-and-user">
         <form>
             <input type="search" placeholder="Search Pages...">
@@ -24,9 +24,12 @@
     <section class="add-section">
         <button class="btn add-btn"><a href="{{route('serie.create')}}">Create New Serie<i class="ml-2 fa fa-plus"></i></a></button>
     </section>
-    <section class="movie-list">
+    <section class="serie-list">
        @foreach ($series as $serie)
-            <div class="movie-item">{{$serie->title}}</div>
+            <div class="serie-item" style="background-image: url({{url('storage/images/series/'.$serie->poster)}})">
+                <div class="title">{{$serie->title}}</div>
+                <div class="year">Year:{{$serie->year}}</div>
+            </div>
        @endforeach
     </section>
     <div class="pagination-wrapper"><div>{{$series->links()}}</div></div>
