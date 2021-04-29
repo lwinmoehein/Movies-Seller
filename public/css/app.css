@@ -14028,6 +14028,15 @@ a.text-dark:focus {
 .input-form .input-wrapper input {
   width: 40em;
   padding: 1em;
+  margin-top: 1em;
+}
+
+.input-form .input-wrapper textarea {
+  margin-top: 1em;
+}
+
+.input-form .input-wrapper select {
+  margin-top: 1em;
 }
 
 .store-btn-wrapper {

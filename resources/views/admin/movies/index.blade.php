@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="movies">
+
     <section class="search-and-user">
         <form>
             <input type="search" placeholder="Search Pages...">
@@ -20,6 +21,9 @@
                 </svg>
             </div>
         </div>
+    </section>
+    <section class="add-section">
+        <button class="btn add-btn"><a href="{{route('movie.create')}}">Create New Movie<i class="ml-2 fa fa-plus"></i></a></button>
     </section>
     <section class="movie-list">
        @foreach ($movies as $movie)

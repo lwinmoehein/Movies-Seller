@@ -8,4 +8,8 @@ class Movie extends Model
 {
     //
     public $table = 'movies';
+
+    protected $fillable = [
+        'title','code_no','img_name','year','country_id','description','file_size','artist','url','quality'
+    ];
 }
