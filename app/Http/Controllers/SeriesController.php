@@ -9,7 +9,7 @@ class SeriesController extends Controller
 {
     //
     public function index(){
-        $series = Serie::all();
+        $series = Serie::paginate();
         return view('admin.series.index',compact('series'));
     }
 }

@@ -30,7 +30,7 @@
             </a>
         </li>
         <li>
-            <a href="#0">
+            <a href="{{route('tag.index')}}">
                 <svg>
                     <use xlink:href="#trends"></use>
                 </svg>

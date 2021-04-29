@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TagController extends Controller
 {
@@ -28,6 +29,7 @@ class TagController extends Controller
     public function create()
     {
         //
+        return view('admin.tags.new');
     }
 
     /**
@@ -39,6 +41,18 @@ class TagController extends Controller
     public function store(Request $request)
     {
         //
+        if($request->tag_image) {
+            $fileName = time().'_'.$request->tag_image->getClientOriginalName();
+            $filePath = $request->file('tag_image')->storeAs('images/tags', $fileName, 'public');
+
+            $tag = Tag::create([
+                'tag_name'=>$request->tag_name,
+                'tag_img'=>$fileName
+            ]);
+
+            return redirect(route('tag.index'));
+        }
+
     }
 
     /**

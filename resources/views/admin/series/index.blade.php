@@ -26,5 +26,6 @@
             <div class="movie-item">{{$serie->title}}</div>
        @endforeach
     </section>
+    <div>{{$series->links()}}</div>
 </div>
 @endsection

@@ -1,7 +1,9 @@
 /* RESET RULES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700&display=swap");
-
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/font-awesome/scss/font-awesome";
+@import "master.scss";
 :root {
   --page-header-bgColor: #242e42;
   --page-header-bgColor-hover: #1d2636;

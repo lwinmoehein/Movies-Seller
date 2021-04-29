@@ -1,0 +1,12 @@
+.add-section {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.input-form{
+    .input-wrapper{
+        display: flex;
+        flex-flow: column;
+    }
+}

@@ -21,6 +21,9 @@
             </div>
         </div>
     </section>
+    <section class="add-section">
+        <button class="btn add-btn"><a href="{{route('tag.create')}}"> New Btn<i class="ml-2 fa fa-plus"></i></a></button>
+    </section>
     <section class="movie-list">
        @foreach ($tags as $tag)
             <div class="movie-item">{{$tag->tag_name}}</div>
