@@ -1,0 +1,28 @@
+.tags {
+    .tag-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        .tag-item{
+
+            margin: 2em;
+            position: relative;
+            .tag-title {
+                text-align: center;
+                font-weight: bolder;
+                background-color: $primary-color;
+                color: white;
+            }
+            img {
+                max-width: 100%;
+                max-height: 100%;
+
+                -webkit-filter: blur(0.1px); //change the value according to what suits the best
+                -moz-filter: blur(0.1px); //change the value according to what suits the best
+                -o-filter: blur(0.1px); //change the value according to what suits the best
+                -ms-filter: blur(0.1px); //change the value according to what suits the best
+                filter: blur(0.1px); //change the value according to what suits the best
+            }
+        }
+
+    }
+}

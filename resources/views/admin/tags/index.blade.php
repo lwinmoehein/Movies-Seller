@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="movies">
+<div class="tags">
     <section class="search-and-user">
         <form>
             <input type="search" placeholder="Search Pages...">
@@ -24,9 +24,15 @@
     <section class="add-section">
         <button class="btn add-btn"><a href="{{route('tag.create')}}"> New Btn<i class="ml-2 fa fa-plus"></i></a></button>
     </section>
-    <section class="movie-list">
+    <section class="tag-list">
        @foreach ($tags as $tag)
-            <div class="movie-item">{{$tag->tag_name}}</div>
+            <div class="tag-item">
+                <div>
+                <img src="{{url('storage/images/tags/'.$tag->tag_img)}}" alt="">
+                </div>
+                <div class="tag-title">{{$tag->tag_name}}</div>
+
+            </div>
        @endforeach
     </section>
 </div>

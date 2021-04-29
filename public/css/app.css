@@ -14000,6 +14000,32 @@ a.text-dark:focus {
   flex-flow: column;
 }
 
+.tags .tag-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.tags .tag-list .tag-item {
+  margin: 2em;
+  position: relative;
+}
+
+.tags .tag-list .tag-item .tag-title {
+  text-align: center;
+  font-weight: bolder;
+  background-color: #7889a4;
+  color: white;
+}
+
+.tags .tag-list .tag-item img {
+  max-width: 100%;
+  max-height: 100%;
+  -moz-filter: blur(0.1px);
+  -o-filter: blur(0.1px);
+  -ms-filter: blur(0.1px);
+  filter: blur(0.1px);
+}
+
 :root {
   --page-header-bgColor: #242e42;
   --page-header-bgColor-hover: #1d2636;
