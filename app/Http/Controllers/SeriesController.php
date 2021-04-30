@@ -34,8 +34,8 @@ class SeriesController extends Controller
     {
 
         if($request->serie_image) {
-            $fileName = time().'_'.$request->serie_image->getClientOriginalName();
-            $filePath = $request->file('serie_image')->storeAs('images/series', $fileName, 'public');
+            $fileName = '['.$request->code_no.'].jpg';
+            $filePath = $request->file('serie_image')->storeAs('images/Series', $fileName, 'public');
 
             $tag = Serie::create([
                 'title'=>$request->title,

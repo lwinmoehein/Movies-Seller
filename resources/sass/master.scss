@@ -57,15 +57,37 @@
         flex-wrap: wrap;
 
         .movie-item{
-            height: 200px;
-            width: 100px;
-            display: flex;
-            flex-flow: column;
-            align-items: flex-end;
+            height: 250px;
+            width: 200px;
+            position: relative;
+            margin: 1em;
+            padding: 1em;
+
+            img {
+                width: 200px;
+                height: 250px;
+                object-fit: contain;
+            }
+
+            .title {
+                top: 1%;
+                left: 5%;
+                position: absolute;
+                color: white;
+                padding: 0.5em;
+                font-weight: bolder;
+            }
+            .year {
+                bottom: 1%;
+                right: 3%;
+                position: absolute;
+                color: $primary-color;
+                font-weight: bolder;
+            }
         }
     }
 }
-.series {
+
     .serie-list{
         display: flex;
         flex-wrap: wrap !important;
@@ -78,12 +100,13 @@
             margin: 1em;
             border-radius: 5px;
             padding: 1em;
+            background-size: cover;
 
             .title {
                 top: 1%;
                 left: 3%;
                 position: absolute;
-                color: $darker-primary-color;
+                color: white;
                 padding: 0.5em;
                 font-weight: bolder;
             }
@@ -95,11 +118,6 @@
                 font-weight: bolder;
             }
 
-            img {
-                width: 200px;
-                height: 250px;
-                object-fit: containz;
-            }
         }
     }
-}
+

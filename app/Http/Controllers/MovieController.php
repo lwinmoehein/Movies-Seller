@@ -40,9 +40,10 @@ class MovieController extends Controller
     public function store(Request $request)
     {
         if($request->movie_image) {
-            $fileName = time().'_'.$request->movie_image->getClientOriginalName();
+            $fileName ='['.$request->code_no.'].'.$request->movie_image->getClientOriginalExtension();
             $country = Country::find($request->country);
             $filePath = $request->file('movie_image')->storeAs('images/'.$country->country_name.'/', $fileName, 'public');
+
 
             $tag = Movie::create([
                 'title'=>$request->title,
