@@ -14101,8 +14101,11 @@ a.text-dark:focus {
   background-color: #7889a4;
   margin: 1em;
   border-radius: 5px;
-  padding: 1em;
   background-size: cover;
+}
+
+.serie-list .serie-item span {
+  color: yellow;
 }
 
 .serie-list .serie-item .title {
@@ -14114,12 +14117,18 @@ a.text-dark:focus {
   font-weight: bolder;
 }
 
-.serie-list .serie-item .year {
-  bottom: 1%;
-  right: 3%;
+.serie-list .serie-item .info {
+  color: white;
+  width: 100%;
+  bottom: 0%;
   position: absolute;
-  color: #7889a4;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
+  background: rgba(76, 175, 80, 0.3);
   font-weight: bolder;
+  font-size: smaller;
+  text-align: right;
 }
 
 .tags .tag-list {

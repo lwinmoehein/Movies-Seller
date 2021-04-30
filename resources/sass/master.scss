@@ -99,9 +99,12 @@
             background-color: $primary-color;
             margin: 1em;
             border-radius: 5px;
-            padding: 1em;
+            //padding: 1em;
             background-size: cover;
 
+            span {
+                color: yellow;
+            }
             .title {
                 top: 1%;
                 left: 3%;
@@ -110,12 +113,18 @@
                 padding: 0.5em;
                 font-weight: bolder;
             }
-            .year {
-                bottom: 1%;
-                right: 3%;
+            .info {
+                color: white;
+                width: 100%;
+                bottom: 0%;
                 position: absolute;
-                color: $primary-color;
+                display: flex;
+                justify-content: space-between;
+                padding: 0.5em;
+                background: rgba(76, 175, 80, 0.3) ;
                 font-weight: bolder;
+                font-size: smaller;
+                text-align: right;
             }
 
         }

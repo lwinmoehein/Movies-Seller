@@ -29,9 +29,12 @@
        @foreach ($movies as $movie)
             <div class="serie-item" style="background-image: url('{{url('storage/images/'.$movie->country->country_name.'/['.$movie->code_no.'].jpg')}}')" alt="{{$movie->title}}" >
                 <div class="title">
-                    {{$movie->title}}
+                    <span>[{{$movie->code_no}}] </span>{{$movie->title}}
                 </div>
-                <div class="year">Year:{{$movie->year}}</div>
+                <div class="info">
+                    <div class="size">Size:<span>{{$movie->file_size}} MB</span></div>
+                    <div class="year">Year:<span>{{$movie->year??'N/A'}}</span></div>
+                </div>
 
             </div>
        @endforeach
