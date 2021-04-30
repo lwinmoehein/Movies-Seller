@@ -14051,12 +14051,17 @@ a.text-dark:focus {
 }
 
 .movies .movie-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
 }
 
 .movies .movie-list .movie-item {
-  height: 100px;
+  height: 200px;
+  width: 100px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
 }
 
 .series .serie-list {
@@ -14067,7 +14072,7 @@ a.text-dark:focus {
 
 .series .serie-list .serie-item {
   width: 200px;
-  height: 100px;
+  height: 250px;
   position: relative;
   background-color: #7889a4;
   margin: 1em;
@@ -14079,7 +14084,8 @@ a.text-dark:focus {
   top: 1%;
   left: 3%;
   position: absolute;
-  color: white;
+  color: #2a4a7e;
+  padding: 0.5em;
   font-weight: bolder;
 }
 
@@ -14093,9 +14099,9 @@ a.text-dark:focus {
 
 .series .serie-list .serie-item img {
   width: 200px;
-  height: 100px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 250px;
+  -o-object-fit: containz;
+     object-fit: containz;
 }
 
 .tags .tag-list {

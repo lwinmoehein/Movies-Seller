@@ -27,7 +27,12 @@
     </section>
     <section class="movie-list">
        @foreach ($movies as $movie)
-            <div class="movie-item">{{$movie->title}}</div>
+       {{$movie->img_name}}
+            <div class="movie-item" >
+                <div class="title">
+                    <img src="{{url('storage/images/'.$movie->country->country_name.'/['.$movie->code_no.'].jpg')}}" alt="{{$movie->title}}" width="100px" height="100px">
+                </div>
+            </div>
        @endforeach
     </section>
     <div class="pagination-wrapper"><div>{{$movies->links()}}</div></div>

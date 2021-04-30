@@ -52,11 +52,16 @@
 }
 .movies {
     .movie-list{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
 
         .movie-item{
-            height: 100px;
+            height: 200px;
+            width: 100px;
+            display: flex;
+            flex-flow: column;
+            align-items: flex-end;
         }
     }
 }
@@ -67,7 +72,7 @@
         flex-flow: row;
         .serie-item {
             width: 200px;
-            height: 100px;
+            height: 250px;
             position: relative;
             background-color: $primary-color;
             margin: 1em;
@@ -78,7 +83,8 @@
                 top: 1%;
                 left: 3%;
                 position: absolute;
-                color: white;
+                color: $darker-primary-color;
+                padding: 0.5em;
                 font-weight: bolder;
             }
             .year {
@@ -91,8 +97,8 @@
 
             img {
                 width: 200px;
-                height: 100px;
-                object-fit: cover;
+                height: 250px;
+                object-fit: containz;
             }
         }
     }

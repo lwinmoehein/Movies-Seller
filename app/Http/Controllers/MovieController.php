@@ -12,7 +12,7 @@ class MovieController extends Controller
 {
     //
     public function index(){
-        $movies = Movie::paginate();
+        $movies = Movie::with('tags')->paginate();
         return view('admin.movies.index',compact('movies'));
     }
 
@@ -39,10 +39,10 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->tags);
         if($request->movie_image) {
             $fileName = time().'_'.$request->movie_image->getClientOriginalName();
-            $filePath = $request->file('movie_image')->storeAs('images/movies', $fileName, 'public');
+            $country = Country::find($request->country);
+            $filePath = $request->file('movie_image')->storeAs('images/'.$country->country_name.'/', $fileName, 'public');
 
             $tag = Movie::create([
                 'title'=>$request->title,
