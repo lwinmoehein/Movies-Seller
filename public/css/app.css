@@ -14012,6 +14012,32 @@ a.text-dark:focus {
   font-weight: bolder;
 }
 
+input[type=checkbox] {
+  -webkit-appearance: checkbox;
+  width: 10px !important;
+  height: 10px !important;
+  margin-right: 0.5em;
+  margin-top: 0.2em !important;
+}
+
+input[type=file] {
+  padding: 0em !important;
+}
+
+label {
+  color: #7889a4;
+}
+
+.category-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category-wrapper div {
+  margin-right: 0.5em;
+  display: flex;
+}
+
 .input-form {
   margin-top: 5em;
   display: flex;
@@ -14020,9 +14046,7 @@ a.text-dark:focus {
 }
 
 .input-form .input-wrapper {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 40em;
 }
 
 .input-form .input-wrapper input {
@@ -14042,6 +14066,15 @@ a.text-dark:focus {
 .input-form .input-wrapper .checkbox {
   width: 1em;
   height: 1em;
+  -webkit-appearance: checkbox !important;
+}
+
+.input-form .input-wrapper .preview-image {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .store-btn-wrapper {
@@ -14115,6 +14148,27 @@ a.text-dark:focus {
   color: white;
   padding: 0.5em;
   font-weight: bolder;
+}
+
+.serie-list .serie-item .actions {
+  bottom: 15%;
+  right: 0%;
+  position: absolute;
+  background: rgba(76, 175, 80, 0.3);
+  padding: 0.2em 0.5em 0.2em 0.5em;
+}
+
+.serie-list .serie-item .actions i {
+  font-weight: bolder;
+}
+
+.serie-list .serie-item .actions .fa-trash {
+  color: red;
+  margin-right: 0.7em;
+}
+
+.serie-list .serie-item .actions .fa-pencil {
+  color: white;
 }
 
 .serie-list .serie-item .info {
@@ -14216,8 +14270,7 @@ input {
 }
 
 [type=checkbox] {
-  position: absolute;
-  left: -9999px;
+  -webkit-appearance: checkbox;
 }
 
 label {

@@ -45,7 +45,7 @@ class MovieController extends Controller
             $filePath = $request->file('movie_image')->storeAs('images/'.$country->country_name.'/', $fileName, 'public');
 
 
-            $tag = Movie::create([
+            $movie = Movie::create([
                 'title'=>$request->title,
                 'code_no'=>$request->code_no,
                 'img_name'=>$fileName,
@@ -56,6 +56,8 @@ class MovieController extends Controller
                 'artist'=>$request->artists,
                 'url'=>$request->trailer_url,
             ]);
+
+            $movie->tags()->attach($request->tags);
 
             return redirect(route('movie.index'));
         }
@@ -79,9 +81,15 @@ class MovieController extends Controller
      * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function edit(Movie $tag)
+    public function edit(Movie $movie)
     {
         //
+        $movie->load('tags');
+        $years = Year::all();
+        $countries = Country::all();
+        $tags = Tag::all();
+
+        return view('admin.movies.edit',compact('movie','years','countries','tags'));
     }
 
     /**

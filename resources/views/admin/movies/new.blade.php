@@ -27,7 +27,17 @@
             @endforeach
             <input type="text" name="trailer_url" placeholder="Movie Trailer Url"/>
             <input type="file" name="movie_image" placeholder="Movie Image"/>
+            <p>Tagged categories:</p>
 
+            <div class="category-wrapper">
+                @foreach ($tags as $tag)
+                    <div>
+                        <input type="checkbox" value="{{$tag->id}}" id="{{$tag->id}}"  name="tags[]"
+                            >
+                        <label for="{{$tag->id}}">{{$tag->tag_name}}</label>
+                    </div>
+                @endforeach
+            </div>
           </div>
           <div class="store-btn-wrapper">
             <button class="btn add-btn" type="submit">Create new Movie</button>
