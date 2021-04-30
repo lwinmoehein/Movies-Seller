@@ -4,8 +4,9 @@
 <div>
     <section class="input-form">
 
-       <form action="{{route('movie.store')}}" method="POST" enctype="multipart/form-data">
+       <form action="{{route('movie.update',$movie->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
+        @method('PUT')
           <div class="input-wrapper">
 
             <input type="text" name="title" placeholder="Movie Title" value="{{$movie->title}}"/>
@@ -42,7 +43,7 @@
             </div>
           </div>
           <div class="store-btn-wrapper">
-            <button class="btn add-btn" type="submit">Create new Movie</button>
+            <button class="btn add-btn" type="submit">Edit Movie</button>
           </div>
        </form>
     </section>

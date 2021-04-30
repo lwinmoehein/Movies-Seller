@@ -7,6 +7,8 @@ use App\Movie;
 use App\Year;
 use App\Country;
 use App\Tag;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class MovieController extends Controller
 {
@@ -99,9 +101,41 @@ class MovieController extends Controller
      * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Movie $tag)
+    public function update(Request $request, Movie $movie)
     {
         //
+
+        if($request->country!=$movie->country->id){
+            $newCountry = Country::find($request->country);
+            Storage::disk('public')->move('images/'.$movie->country->country_name.'/['.$movie->code_no.'].jpg','images/'.$newCountry->country_name.'/['.$movie->code_no.'].jpg');
+        }
+
+        $movie->update([
+            'title'=>$request->title,
+            'code_no'=>$request->code_no,
+            'year'=>$request->year,
+            'country_id'=>$request->country,
+            'description'=>$request->description,
+            'file_size'=>$request->file_size,
+            'artist'=>$request->artists,
+            'url'=>$request->trailer_url,
+        ]);
+
+        $movie->tags()->sync($request->tags);
+
+
+
+        if($request->movie_image) {
+            Storage::delete('['.$request->code_no.'].jpg');
+            $fileName ='['.$request->code_no.'].jpg';
+            $country = Country::find($request->country);
+            $filePath = $request->file('movie_image')->storeAs('images/'.$country->country_name.'/', $fileName, 'public');
+            $movie->update(['img_name'=>$fileName]);
+
+        }
+        return redirect(route('movie.index'));
+
+
     }
 
     /**
