@@ -14030,6 +14030,7 @@ label {
 
 .category-wrapper {
   display: flex;
+  width: 40em;
   flex-wrap: wrap;
 }
 

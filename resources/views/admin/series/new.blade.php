@@ -30,13 +30,39 @@
             <input type="number" name="episode_count" placeholder="Number of Episodes"/>
 
             <input type="text" name="trailer_url" placeholder="Serie Trailer Url"/>
-            <input type="file" name="serie_image" placeholder="Serie Image"/>
+            <input type="file" name="serie_image" placeholder="Serie Image" placeholder="Movie Image" accept="image/*" onchange="loadFile(event)"/>
+            <img width="200px" height="250px" class="preview-image" alt="Poster Preview" id="preview_image">
+          </div>
+          <p>Tagged categories:</p>
 
+          <div class="category-wrapper">
+              @foreach ($tags as $tag)
+                  <div>
+                      <input type="checkbox" value="{{$tag->id}}" id="{{$tag->id}}"  name="tags[]"
+                          >
+                      <label for="{{$tag->id}}">{{$tag->tag_name}}</label>
+                  </div>
+              @endforeach
           </div>
           <div class="store-btn-wrapper">
-            <button class="btn add-btn" type="submit">Create new Movie</button>
+            <button class="btn add-btn" type="submit">Create New Serie</button>
           </div>
        </form>
     </section>
 </div>
+@endsection
+@section('scripts')
+
+<script>
+        var loadFile = function(event) {
+      var output = document.getElementById('preview_image');
+      output.src = URL.createObjectURL(event.target.files[0]);
+      output.onload = function() {
+        URL.revokeObjectURL(output.src) // free memory
+      }
+    };
+
+
+</script>
+
 @endsection

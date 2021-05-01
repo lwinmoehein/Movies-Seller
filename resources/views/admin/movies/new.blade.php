@@ -26,7 +26,10 @@
             @foreach ($tags as $tag)
             @endforeach
             <input type="text" name="trailer_url" placeholder="Movie Trailer Url"/>
-            <input type="file" name="movie_image" placeholder="Movie Image"/>
+
+            <input type="file" name="movie_image" placeholder="Movie Image" accept="image/*" onchange="loadFile(event)"/>
+            <img width="200px" height="250px" class="preview-image" alt="Poster Preview" id="preview_image">
+
             <p>Tagged categories:</p>
 
             <div class="category-wrapper">
@@ -45,4 +48,19 @@
        </form>
     </section>
 </div>
+@endsection
+@section('scripts')
+
+<script>
+        var loadFile = function(event) {
+      var output = document.getElementById('preview_image');
+      output.src = URL.createObjectURL(event.target.files[0]);
+      output.onload = function() {
+        URL.revokeObjectURL(output.src) // free memory
+      }
+    };
+
+
+</script>
+
 @endsection

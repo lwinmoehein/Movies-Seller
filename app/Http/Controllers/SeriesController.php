@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Serie;
 use App\Year;
 use App\Country;
+use App\Tag;
 
 class SeriesController extends Controller
 {
@@ -20,8 +21,9 @@ class SeriesController extends Controller
         //
         $years = Year::all();
         $countries = Country::all();
+        $tags = Tag::all();
 
-        return view('admin.series.new',compact('years','countries'));
+        return view('admin.series.new',compact('years','countries','tags'));
     }
 
     /**
@@ -37,7 +39,7 @@ class SeriesController extends Controller
             $fileName = '['.$request->code_no.'].jpg';
             $filePath = $request->file('serie_image')->storeAs('images/Series', $fileName, 'public');
 
-            $tag = Serie::create([
+            $serie = Serie::create([
                 'title'=>$request->title,
                 'code_no'=>$request->code_no,
                 'poster'=>$fileName,
@@ -50,6 +52,8 @@ class SeriesController extends Controller
                 'episode'=>$request->episode_count,
                 'complete_ongoing'=>$request->status
             ]);
+            if(isset($request->tags))
+                $serie->tags()->attach($request->tags);
 
             return redirect(route('serie.index'));
         }
@@ -76,6 +80,13 @@ class SeriesController extends Controller
     public function edit(Serie $serie)
     {
         //
+        $serie->load('tags');
+
+        $years = Year::all();
+        $countries = Country::all();
+        $tags = Tag::all();
+
+        return view('admin.series.edit',compact('serie','years','countries','tags'));
     }
 
     /**
