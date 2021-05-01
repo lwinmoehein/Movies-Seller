@@ -23,3 +23,10 @@ Route::resource('serie','SeriesController');
 Route::get('series/destroy/{serie}','SeriesController@destroy')->name('series.destroy');
 
 Route::resource('tag','TagController');
+Route::get('tags/destroy/{tag}','TagController@destroy')->name('tags.destroy');
+
+Route::resource('country','CountryController');
+Route::get('countries/destroy/{country}','CountryController@destroy')->name('countries.destroy');
+
+Route::resource('year','YearController');
+Route::get('years/destroy/{year}','YearController@destroy')->name('years.destroy');

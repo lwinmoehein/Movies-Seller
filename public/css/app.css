@@ -14007,6 +14007,12 @@ a.text-dark:focus {
   flex: 1;
 }
 
+.tag-add-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 8em;
+}
+
 .input-form .input-wrapper {
   display: flex;
   flex-flow: column;
@@ -14342,9 +14348,25 @@ label {
 
 .tags .tag-list .tag-item {
   position: relative;
-  height: 50px;
-  width: 130px;
+  height: 70px;
+  width: 150px;
   margin: 1em;
+  border-radius: 5px;
+  background-color: #7889a4;
+  background-size: cover;
+}
+
+.tags .tag-list .tag-item .actions-wrapper {
+  position: absolute;
+  top: 0%;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 0.3em;
+  padding-top: 0.3em;
+  background: rgba(76, 175, 80, 0.3);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .tags .tag-list .tag-item .tag-title {
@@ -14352,6 +14374,8 @@ label {
   font-weight: bolder;
   background-color: #7889a4;
   color: white;
+  border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .tags .tag-list .tag-item img {
@@ -14368,6 +14392,34 @@ label {
 
 .admin-menu i {
   margin-right: 1em;
+}
+
+.country .country-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.country .country-list .country-item {
+  height: 70px;
+  width: 150px;
+  margin: 1em;
+  border-radius: 5px;
+  background-color: #7889a4;
+  color: white;
+  padding: 0.4em;
+  display: flex;
+  justify-content: space-between;
+  background-size: cover;
+}
+
+.country .country-list .country-item a {
+  margin-right: 0.2em;
+}
+
+.country .country-add-section {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 12em;
 }
 
 :root {

@@ -27,20 +27,23 @@
         </li>
         <li>
             <a href="{{route('tag.index')}}">
-                <svg>
-                    <use xlink:href="#trends"></use>
-                </svg>
+                <i class="fa fa-tags"></i>
                 <span>Tags</span>
             </a>
         </li>
         <li>
-            <a href="#0">
-                <svg>
-                    <use xlink:href="#collection"></use>
-                </svg>
-                <span>Additional Settings</span>
+            <a href="{{route('country.index')}}">
+                <i class="fa fa-globe"></i>
+                <span>Countries</span>
             </a>
         </li>
+        <li>
+            <a href="{{route('year.index')}}">
+                <i class="fa fa-calendar"></i>
+                <span>Years</span>
+            </a>
+        </li>
+
 
     </ul>
 </nav>

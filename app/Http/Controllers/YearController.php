@@ -15,6 +15,8 @@ class YearController extends Controller
     public function index()
     {
         //
+        $years = Year::orderBy('updated_at','desc')->paginate(20);
+        return view('admin.years.index',compact('years'));
     }
 
     /**
@@ -25,6 +27,7 @@ class YearController extends Controller
     public function create()
     {
         //
+        return view('admin.years.new');
     }
 
     /**
@@ -36,6 +39,8 @@ class YearController extends Controller
     public function store(Request $request)
     {
         //
+        $year=Year::create(['year'=>$request->year]);
+        return redirect(route('year.index'));
     }
 
     /**
@@ -81,5 +86,7 @@ class YearController extends Controller
     public function destroy(Year $year)
     {
         //
+        $year->delete();
+        return redirect(route('year.index'));
     }
 }

@@ -16,7 +16,7 @@ class TagController extends Controller
     public function index()
     {
         //
-        $tags= Tag::paginate();
+        $tags= Tag::orderBy('updated_at','desc')->paginate();
         return view('admin.tags.index',compact('tags'));
 
     }
@@ -98,5 +98,8 @@ class TagController extends Controller
     public function destroy(Tag $tag)
     {
         //
+
+        $tag->delete();
+        return redirect()->back();
     }
 }

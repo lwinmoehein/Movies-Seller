@@ -8,4 +8,6 @@ class Year extends Model
 {
     //
     public $table='years';
+
+    protected $fillable= ['year'];
 }

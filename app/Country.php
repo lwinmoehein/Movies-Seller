@@ -9,4 +9,6 @@ class Country extends Model
     //
     public $table='countries';
 
+    protected $fillable = ['country_name','country_img'];
+
 }

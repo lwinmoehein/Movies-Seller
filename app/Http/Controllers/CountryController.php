@@ -15,6 +15,8 @@ class CountryController extends Controller
     public function index()
     {
         //
+        $countries = Country::all();
+        return view('admin.countries.index',compact('countries'));
     }
 
     /**
@@ -25,6 +27,7 @@ class CountryController extends Controller
     public function create()
     {
         //
+        return view('admin.countries.new');
     }
 
     /**
@@ -36,6 +39,18 @@ class CountryController extends Controller
     public function store(Request $request)
     {
         //
+        $country = new Country();
+        $country->country_name = $request->country_name;
+
+        if($request->country_image) {
+            $fileName = time().'_'.$request->country_image->getClientOriginalName();
+            $filePath = $request->file('country_image')->storeAs('images/countries', $fileName, 'public');
+            $country->country_img = $fileName;
+        }
+
+        $country->save();
+        return redirect(route('country.index'));
+
     }
 
     /**
@@ -81,5 +96,7 @@ class CountryController extends Controller
     public function destroy(Country $country)
     {
         //
+        $country->delete();
+        return redirect(route('country.index'));
     }
 }
