@@ -13990,9 +13990,21 @@ a.text-dark:focus {
 
 .add-section {
   display: flex;
-  justify-content: flex-end;
   margin-top: 2em;
   margin-bottom: 2em;
+  padding: 1em;
+}
+
+.add-section form {
+  flex: 4;
+}
+
+.add-section .add-btn {
+  flex: 1;
+}
+
+.add-section .space {
+  flex: 1;
 }
 
 .input-form .input-wrapper {
@@ -14037,6 +14049,27 @@ label {
 .category-wrapper div {
   margin-right: 0.5em;
   display: flex;
+}
+
+.search-form .search-box-wrapper {
+  display: flex;
+  background-color: white;
+  padding: 0.5em;
+  height: 3em;
+  margin-right: 1em;
+}
+
+.search-form .search-box-wrapper svg {
+  width: 30px;
+  height: 30px;
+}
+
+.search-form .search-box-wrapper input {
+  flex: 8;
+}
+
+.search-form .search-box-wrapper button {
+  flex: 1;
 }
 
 .input-form {

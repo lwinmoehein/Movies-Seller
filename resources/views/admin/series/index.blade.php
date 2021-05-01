@@ -3,14 +3,6 @@
 @section('content')
 <div class="series">
     <section class="search-and-user">
-        <form>
-            <input type="search" placeholder="Search Pages...">
-            <button type="submit" aria-label="submit form">
-                <svg aria-hidden="true">
-                    <use xlink:href="#search"></use>
-                </svg>
-            </button>
-        </form>
         <div class="admin-profile">
             <span class="greeting">Hello admin</span>
             <div class="notifications">
@@ -22,7 +14,20 @@
         </div>
     </section>
     <section class="add-section">
+        <form class="search-form" action="{{route('serie.index')}}" method="GET">
+            @csrf
+            <div class="search-box-wrapper">
+
+                <input type="text" name="queryString" value="{{old('queryString')??''}}" placeholder="Search by Code or Title">
+                <button type="submit" aria-label="submit form">
+                    <svg aria-hidden="true">
+                        <use xlink:href="#search"></use>
+                    </svg>
+                </button>
+            </div>
+        </form>
         <button class="btn add-btn"><a href="{{route('serie.create')}}">Create New Serie<i class="ml-2 fa fa-plus"></i></a></button>
+        <div class="space"></div>
     </section>
     <section class="serie-list">
        @foreach ($series as $serie)

@@ -18,4 +18,7 @@ class Serie extends Model
     public function tags(){
         return $this->belongsToMany(Tag::class, 'tagseries', 'series_id', 'tag_id');
     }
+    public function country(){
+        return $this->belongsTo('App\Country','country_id');
+    }
 }

@@ -7,12 +7,21 @@ use App\Serie;
 use App\Year;
 use App\Country;
 use App\Tag;
+use Illuminate\Support\Facades\Storage;
 
 class SeriesController extends Controller
 {
     //
-    public function index(){
-        $series = Serie::paginate();
+    public function index(Request $request){
+        $series = Serie::query()->orderBy('updated_at','desc');
+        if(isset($request->queryString)) {
+            $queryString = $request->queryString;
+            $series = $series->where('code_no', 'LIKE', "%{$queryString}%")
+                            ->orWhere('title', 'LIKE', "%{$queryString}%");
+        }
+        $series = $series->paginate()->appends($request->input());
+        session()->flashInput($request->input());
+
         return view('admin.series.index',compact('series'));
     }
 
@@ -99,6 +108,32 @@ class SeriesController extends Controller
     public function update(Request $request, Serie $serie)
     {
         //
+
+        $serie->update([
+            'title'=>$request->title,
+            'year'=>$request->year,
+            'country_id'=>$request->country,
+            'detail'=>$request->description,
+            'file_size'=>$request->file_size,
+            'url'=>$request->trailer_url,
+            'season'=>$request->season_count,
+            'episode'=>$request->episode_count,
+            'complete_ongoing'=>$request->status
+        ]);
+
+        if(isset($request->tags))
+            $serie->tags()->sync($request->tags);
+
+
+        if($request->serie_image) {
+            Storage::delete('['.$serie->code_no.'].jpg');
+            $fileName = '['.$serie->code_no.'].jpg';
+            $filePath = $request->file('serie_image')->storeAs('images/Series', $fileName, 'public');
+            $serie->update(['poster',$fileName]);
+        }
+        return redirect(route('serie.index'));
+
+
     }
 
     /**
@@ -110,5 +145,9 @@ class SeriesController extends Controller
     public function destroy(Serie $serie)
     {
         //
+
+        $serie->delete();
+        return redirect()->back();
     }
+
 }

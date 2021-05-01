@@ -1,8 +1,18 @@
 .add-section {
     display: flex;
-    justify-content: flex-end;
     margin-top: 2em;
     margin-bottom: 2em;
+    padding: 1em;
+    form {
+        flex:4;
+    }
+    .add-btn {
+        flex: 1;
+    }
+    .space {
+        flex: 1;
+    }
+
 }
 .input-form{
     .input-wrapper{
@@ -47,6 +57,26 @@ label {
     }
 
 }
+.search-form {
+    .search-box-wrapper {
+        display: flex;
+        background-color: white;
+        padding: 0.5em;
+        height: 3em;
+        margin-right: 1em;
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+        input {
+            flex: 8;
+        }
+        button {
+            flex: 1;
+        }
+    }
+}
+
 .input-form {
     margin-top: 5em;
     display: flex;
