@@ -13,8 +13,16 @@ use Illuminate\Support\Facades\Storage;
 class MovieController extends Controller
 {
     //
-    public function index(){
-        $movies = Movie::with('tags')->orderBy('updated_at','desc')->paginate();
+    public function index(Request $request){
+        $movies = Movie::query()->orderBy('updated_at','desc')->with('tags');
+        if(isset($request->queryString)) {
+            $queryString = $request->queryString;
+            $movies = $movies->where('code_no', 'LIKE', "%{$queryString}%")
+                            ->orWhere('title', 'LIKE', "%{$queryString}%");
+        }
+        $movies = $movies->paginate()->appends($request->input());
+        session()->flashInput($request->input());
+
         return view('admin.movies.index',compact('movies'));
     }
 
