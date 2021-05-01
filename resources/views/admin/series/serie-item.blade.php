@@ -1,7 +1,7 @@
 <div class="serie-item" onclick="onSerieClick(event,{{$serie->id}})" style="background-image: url({{url('storage/images/Series/['.$serie->code_no.'].jpg')}})">
     <div class="title"><span>[{{$serie->code_no}}]</span> {{$serie->title}}</div>
     <div class="actions">
-        <a href="{{route('series.destroy',$serie->id)}}"><i class="fa fa-trash"></i></a>
+        <a href="{{route('series.destroy',$serie->id)}}"  onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i></a>
         <a href="{{route('serie.edit',$serie->id)}}"><i class="fa fa-pencil"></i></a>
     </div>
     <div class="info">
