@@ -1,4 +1,4 @@
-<div class="serie-item" onclick="onMovieClick({{$movie->id}})" style="background-image: url('{{url('storage/images/'.$movie->country->country_name.'/['.$movie->code_no.'].jpg')}}')" alt="{{$movie->title}}" >
+<div class="serie-item" onclick="onMovieClick(event,{{$movie->id}})" style="background-image: url('{{url('storage/images/'.$movie->country->country_name.'/['.$movie->code_no.'].jpg')}}')" alt="{{$movie->title}}" >
     <div class="title">
         <span>[{{$movie->code_no}}] </span>{{$movie->title}}
     </div>
@@ -79,9 +79,13 @@
         }
     }
 
-    function onMovieClick(id){
+    function onMovieClick(event,id){
         var modal = document.getElementById(`modal-${id}`);
-        modal.style.display="block";
+        var noRedirect = '.fa-trash, .fa-pencil';
+
+        if (!event.target.matches(noRedirect)) {
+            modal.style.display="block";
+        }
     }
     function onCloseClick(){
         let modals = document.getElementsByClassName('modal');
