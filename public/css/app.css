@@ -14248,8 +14248,21 @@ label {
 }
 
 .modal-wrapper .modal-content .body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-flow: column;
+}
+
+.modal-wrapper .modal-content .body .detail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-wrapper .modal-content .body .detail .poster {
+  width: 200px;
+  height: 250px;
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .modal-wrapper .modal-content .body div {

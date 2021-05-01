@@ -20,43 +20,42 @@
     <div class="modal-content">
         <div class="header-wrapper"><span class="title">Movie Details:</span><span class="close" onclick="onCloseClick()">&times;</span></div>
         <div class="body">
-            <div class="">
-               Code: <span class="value">{{$movie->code_no}}</span>
+            <div class="detail">
+                <div>
+                    <div>
+                        Code: <span class="value">{{$movie->code_no}}</span>
+                     </div>
+                     <div>
+                        Movie Title: <span class="value title">{{$movie->title}}</span>
+                    </div>
+                    <div>
+                        Country: <span class="value">{{$movie->country->country_name}}</span>
+                    </div>
+                    <div>
+                        Genre:
+                        @foreach ($movie->tags as $tag)
+                              <span class="value">{{$tag->tag_name}},</span>
+                        @endforeach
+                    </div>
+                    <div>Artists:
+                         <span class="value artists">
+                            {{$movie->artist}}
+                        </span>
+                    </div>
+                    <div>File Size: <span class="file-size value">{{$movie->file_size}} MB</span>
+                    </div>
+                    <div class="trailer-link">Trailer Link:
+                          <a class="value" href="{{$movie->url}}">{{$movie->url}}</a>
+                    </div>
+                </div>
+                <div>
+                    <img  class="poster" src="{{url('storage/images/'.$movie->country->country_name.'/['.$movie->code_no.'].jpg')}}" alt="{{$movie->title}}">
+                </div>
             </div>
-            <div class="">
-
+            <div class="description">
+                <div class="description-label">Description : <div class="description">
+                    {{$movie->description}}</div></div>
             </div>
-
-            <div class="title-label">
-                Movie Title: <span class="value title">{{$movie->title}}</span>
-            </div>
-            <div class="title">
-
-            </div>
-            <div class="">
-                Country: <span class="value">{{$movie->country->country_name}}</span>
-            </div>
-            <div></div>
-            <div class="title-label">
-                Genre:
-                @foreach ($movie->tags as $tag)
-                      <span class="value">{{$tag->tag_name}},</span>
-                @endforeach
-            </div>
-            <div class="">
-
-            </div>
-            <div class="artists-label">Artists: <span class="value artists">
-                {{$movie->artist}} </span></div>
-            <div></div>
-            <div>File Size: <span class="file-size value">{{$movie->file_size}} MB</span></div>
-            <div class="size">
-
-            </div>
-            <div class="trailer-link">Trailer Link:  <a class="value" href="{{$movie->url}}">{{$movie->url}}</a></div>
-            <div></div>
-            <div class="description-label">Description : <div class="description">
-                {{$movie->description}}</div></div>
         </div>
     </div>
 

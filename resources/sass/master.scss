@@ -229,8 +229,23 @@ label {
     }
     .body {
         //margin-top: 2em;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-flow: column;
+
+        .detail {
+            display: flex;
+            justify-content: space-between;
+
+            .poster {
+                width: 200px;
+                height: 250px;
+                border-radius: 5px;
+                object-fit: cover;
+            }
+        }
+        .description {
+
+        }
         div {
             margin-top: 0.5em;
         }
