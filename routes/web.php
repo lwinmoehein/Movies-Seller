@@ -17,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','MovieController@index');
 Route::resource('movie', 'MovieController');
+Route::get('movies/destroy/{movie}','MovieController@destroy')->name('movies.destroy');
 Route::resource('serie','SeriesController');
 Route::resource('tag','TagController');

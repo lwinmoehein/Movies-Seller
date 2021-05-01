@@ -27,20 +27,7 @@
     </section>
     <section class="serie-list">
        @foreach ($movies as $movie)
-            <div class="serie-item" style="background-image: url('{{url('storage/images/'.$movie->country->country_name.'/['.$movie->code_no.'].jpg')}}')" alt="{{$movie->title}}" >
-                <div class="title">
-                    <span>[{{$movie->code_no}}] </span>{{$movie->title}}
-                </div>
-                <div class="actions">
-                    <a href="{{route('movie.destroy',$movie->id)}}"><i class="fa fa-trash"></i></a>
-                    <a href="{{route('movie.edit',$movie->id)}}"><i class="fa fa-pencil"></i></a>
-                </div>
-                <div class="info">
-                    <div class="size">Size:<span>{{$movie->file_size}} MB</span></div>
-                    <div class="year">Year:<span>{{$movie->year??'N/A'}}</span></div>
-                </div>
-
-            </div>
+           @include('admin.movies.movie-item',$movie)
        @endforeach
     </section>
     <div class="pagination-wrapper"><div>{{$movies->links()}}</div></div>

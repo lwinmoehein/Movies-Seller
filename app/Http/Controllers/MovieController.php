@@ -14,7 +14,7 @@ class MovieController extends Controller
 {
     //
     public function index(){
-        $movies = Movie::with('tags')->paginate();
+        $movies = Movie::with('tags')->orderBy('updated_at','desc')->paginate();
         return view('admin.movies.index',compact('movies'));
     }
 
@@ -144,9 +144,11 @@ class MovieController extends Controller
      * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Movie $tag)
+    public function destroy(Movie $movie)
     {
         //
+        $movie->delete();
+        return redirect()->back();
     }
 }
 
