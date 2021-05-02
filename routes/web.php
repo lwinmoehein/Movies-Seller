@@ -18,10 +18,9 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::middleware(['auth'])->group(function () {
-        Route::get('/','MovieController@index');
+//admin panels
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+        Route::get('/','SeriesController@index')->name('index');
         Route::resource('movie', 'MovieController');
         Route::get('movies/destroy/{movie}','MovieController@destroy')->name('movies.destroy');
 

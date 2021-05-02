@@ -13,7 +13,7 @@
         <li class="menu-heading">
             <h3>Admin Panel</h3>
         </li>
-        <li class="{{Route::is('serie.index')?'link-active':''}}">
+        <li class="{{Route::is('serie.index')|| Route::is('index')?'link-active':''}}">
             <a href="{{route('serie.index')}}">
                 <i class="fa fa-tv"></i>
                 <span>Series</span>
