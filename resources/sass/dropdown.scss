@@ -1,0 +1,39 @@
+.user-menu {
+    color: white;
+    padding: 6px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    color: $primary-color;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 150px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: 1em;
+  }
+
+  .dropdown-content button {
+    color: black;
+
+    text-decoration: none;
+    display: block;
+    padding: 6px;
+
+    color: red;
+  }
+
+  .dropdown a:hover {background-color: #ddd;}
+
+  .show {display: block;}

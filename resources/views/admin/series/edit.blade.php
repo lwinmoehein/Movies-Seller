@@ -53,7 +53,7 @@
     </section>
 </div>
 @endsection
-@section('scripts')
+@push('scripts')
 
 <script>
         var loadFile = function(event) {
@@ -67,4 +67,4 @@
 
 </script>
 
-@endsection
+@endpush

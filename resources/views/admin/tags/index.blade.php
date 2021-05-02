@@ -2,18 +2,8 @@
 
 @section('content')
 <div class="tags">
-    <section class="search-and-user">
-        <div class="admin-profile">
-            <span class="greeting">Hello admin</span>
-            <div class="notifications">
-                <span class="badge">1</span>
-                <svg>
-                    <use xlink:href="#users"></use>
-                </svg>
-            </div>
-        </div>
-    </section>
-    <section class="tag-add-section">
+   @include('admin.reusables.logged-user')
+    <section class="tag-add-section mt-5">
         <button class="btn add-btn"><a href="{{route('tag.create')}}">Create New Tag<i class="ml-2 fa fa-plus"></i></a></button>
     </section>
     <section class="tag-list">

@@ -2,18 +2,8 @@
 
 @section('content')
 <div class="country">
-    <section class="search-and-user">
-        <div class="admin-profile">
-            <span class="greeting">Hello admin</span>
-            <div class="notifications">
-                <span class="badge">1</span>
-                <svg>
-                    <use xlink:href="#users"></use>
-                </svg>
-            </div>
-        </div>
-    </section>
-    <section class="country-add-section">
+    @include('admin.reusables.logged-user')
+    <section class="country-add-section mt-5">
         <button class="btn add-btn"><a href="{{route('year.create')}}">Create New Year<i class="ml-2 fa fa-plus"></i></a></button>
     </section>
     <section class="country-list">

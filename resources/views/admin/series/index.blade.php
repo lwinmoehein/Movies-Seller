@@ -2,17 +2,7 @@
 
 @section('content')
 <div class="series">
-    <section class="search-and-user">
-        <div class="admin-profile">
-            <span class="greeting">Hello admin</span>
-            <div class="notifications">
-                <span class="badge">1</span>
-                <svg>
-                    <use xlink:href="#users"></use>
-                </svg>
-            </div>
-        </div>
-    </section>
+    @include('admin.reusables.logged-user')
     <section class="add-section">
         <form class="search-form" action="{{route('serie.index')}}" method="GET">
             @csrf

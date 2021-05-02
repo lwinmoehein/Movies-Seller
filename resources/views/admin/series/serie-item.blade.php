@@ -61,7 +61,7 @@
     </div>
 </div>
 
-@section('scripts')
+@push('scripts')
 <script>
     // Get the modal
     window.onload = function(){
@@ -95,4 +95,4 @@
     }
 
 </script>
-@endsection
+@endpush

@@ -2,18 +2,7 @@
 
 @section('content')
 <div class="movies">
-
-    <section class="search-and-user">
-        <div class="admin-profile">
-            <span class="greeting">Hello admin</span>
-            <div class="notifications">
-                <span class="badge">1</span>
-                <svg>
-                    <use xlink:href="#users"></use>
-                </svg>
-            </div>
-        </div>
-    </section>
+    @include('admin.reusables.logged-user')
     <section class="add-section">
         <form class="search-form" action="{{route('movie.index')}}" method="GET">
             @csrf
@@ -28,6 +17,7 @@
             </div>
         </form>
         <button class="btn add-btn"><a href="{{route('movie.create')}}">Create New Movie<i class="ml-2 fa fa-plus"></i></a></button>
+        <div class="space"></div>
     </section>
     <section class="serie-list">
        @foreach ($movies as $movie)
