@@ -15,7 +15,7 @@
         </li>
         <li class="{{Route::is('serie.index')?'link-active':''}}">
             <a href="{{route('serie.index')}}">
-                <i class="fa fa-film"></i>
+                <i class="fa fa-tv"></i>
                 <span>Series</span>
             </a>
         </li>

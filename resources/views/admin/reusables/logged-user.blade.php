@@ -1,14 +1,15 @@
 <section class="search-and-user">
         <div class="dropdown">
         <form id="logout-form" action="{{ route('logout') }}" method="POST">
+            @csrf
+
         </form>
 
         <button onclick="openUserMenu()" class="user-menu">
             Logged in as:  {{auth()->user()->name}} <i onclick="openUserMenu()" class="fa fa-user"></i>
          </button>
-            @csrf
             <div id="user-menu-dropdown" class="dropdown-content">
-                    <button type="submit" value="LogOut">Log Out</button>
+                    <button type="submit" onclick="logOut()" value="LogOut">Log Out</button>
             </div>
       </div>
 </section>
@@ -17,6 +18,10 @@
 
     function openUserMenu() {
         document.getElementById("user-menu-dropdown").classList.toggle("show");
+    }
+
+    function logOut(){
+        document.getElementById('logout-form').submit();
     }
 
     window.onclick = function(event) {
