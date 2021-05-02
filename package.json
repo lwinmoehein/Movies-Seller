@@ -25,6 +25,8 @@
     },
     "dependencies": {
         "bootstrap": "^4.6.0",
-        "font-awesome": "^4.7.0"
+        "font-awesome": "^4.7.0",
+        "vue-router": "^3.5.1",
+        "vue-store": "^0.3.1-moved"
     }
 }

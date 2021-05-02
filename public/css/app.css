@@ -14022,7 +14022,7 @@ a.text-dark:focus {
 }
 
 .add-btn {
-  background-color: #7889a4;
+  background-color: #6574cd;
   color: white;
   font-weight: bolder;
 }
@@ -14040,7 +14040,7 @@ input[type=file] {
 }
 
 label {
-  color: #7889a4;
+  color: #6574cd;
 }
 
 .category-wrapper {
@@ -14154,7 +14154,7 @@ label {
   bottom: 1%;
   right: 3%;
   position: absolute;
-  color: #7889a4;
+  color: #6574cd;
   font-weight: bolder;
 }
 
@@ -14165,14 +14165,14 @@ label {
 }
 
 .serie-list .serie-item:hover {
-  border: 2px solid #7889a4;
+  border: 2px solid #6574cd;
 }
 
 .serie-list .serie-item {
   width: 200px;
   height: 250px;
   position: relative;
-  background-color: #7889a4;
+  background-color: #6574cd;
   margin: 1em;
   border-radius: 5px;
   background-size: cover;
@@ -14281,7 +14281,7 @@ label {
 .modal-wrapper .modal-content .header-wrapper .title {
   font-weight: bolder;
   font-size: large;
-  color: #7889a4;
+  color: #6574cd;
 }
 
 .modal-wrapper .modal-content .body {
@@ -14311,7 +14311,7 @@ label {
 }
 
 .modal-wrapper .modal-content .body .title {
-  color: #7889a4;
+  color: #6574cd;
 }
 
 .modal-wrapper .modal-content .body .file-size {
@@ -14349,7 +14349,7 @@ label {
   width: 150px;
   margin: 1em;
   border-radius: 5px;
-  background-color: #7889a4;
+  background-color: #6574cd;
   background-size: cover;
 }
 
@@ -14369,7 +14369,7 @@ label {
 .tags .tag-list .tag-item .tag-title {
   text-align: center;
   font-weight: bolder;
-  background-color: #7889a4;
+  background-color: #6574cd;
   color: white;
   border-top-right-radius: 5px;
   border-top-right-radius: 5px;
@@ -14393,11 +14393,11 @@ label {
 
 .admin-menu .link-active {
   background-color: white;
-  color: #7889a4;
+  color: #6574cd;
 }
 
 .admin-menu .link-active:hover {
-  background-color: #afbcc9;
+  background-color: #d1cdcd;
 }
 
 .country .country-list {
@@ -14410,7 +14410,7 @@ label {
   width: 150px;
   margin: 1em;
   border-radius: 5px;
-  background-color: #7889a4;
+  background-color: #6574cd;
   color: white;
   padding: 0.4em;
   display: flex;
@@ -14435,7 +14435,7 @@ label {
   border: none;
   cursor: pointer;
   width: 150px;
-  color: #7889a4;
+  color: #6574cd;
 }
 
 .dropdown {

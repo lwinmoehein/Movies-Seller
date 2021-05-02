@@ -36,3 +36,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::resource('year','YearController');
         Route::get('years/destroy/{year}','YearController@destroy')->name('years.destroy');
 });
+
+
+
+Auth::routes();
+
+Route::get('/', 'SPAController@index')->name('index');
