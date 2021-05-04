@@ -17,7 +17,7 @@ class SeriesController extends Controller
     public function index(Request $request){
         $years =Year::all();
         $categories = Tag::all();
-
+        $countries = Country::all();
 
 
         $series = Serie::query()->orderBy('updated_at','desc')->with('copies');
@@ -29,6 +29,12 @@ class SeriesController extends Controller
         if(isset($request->year_filter)){
             $series = $series->where('year',$request->year_filter);
         }
+        if(isset($request->country_filter)){
+            $countryId = $request->country_filter;
+            $series = $series->whereHas('country',function($q) use ($countryId){
+                $q->where('id',$countryId);
+            });
+        }
         if(isset($request->category_filter)){
             $categoryId = $request->category_filter;
 
@@ -39,7 +45,7 @@ class SeriesController extends Controller
         $series = $series->paginate(6)->appends($request->input());
         session()->flashInput($request->input());
 
-        return view('user.series.index',compact('series','years','categories'));
+        return view('user.series.index',compact('series','years','categories','countries'));
     }
 
 

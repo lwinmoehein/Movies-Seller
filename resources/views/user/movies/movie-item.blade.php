@@ -53,12 +53,12 @@
                 </div>
               
             </div>
-            <div class="actions-wrapper">
+            {{-- <div class="actions-wrapper">
                
                 <button id="add-btn-{{$movie->id}}" class="add-btn {{$movie->copies && $movie->copies->pluck('user_id')->contains(auth()->user()->id)?'added':''}}" onclick="onAddCopyList({{$movie->id}})">
                     <span id="add-label-{{$movie->id}}">{{$movie->copies && $movie->copies->pluck('user_id')->contains(auth()->user()->id)?'Added To List':'Add to Copy List'}}</span><i class="fa fa-plus"></i>
                 </button>
-            </div>
+            </div> --}}
             <div class="description">
                 <div class="description-label">Description : <div class="description">
                     {{$movie->description??'N/A'}}</div></div>

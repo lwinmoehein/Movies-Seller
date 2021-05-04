@@ -14022,7 +14022,7 @@ a.text-dark:focus {
 }
 
 .add-btn {
-  background-color: #6574cd;
+  background-color: darkblue;
   color: white;
   font-weight: bolder;
 }
@@ -14040,7 +14040,7 @@ input[type=file] {
 }
 
 label {
-  color: #6574cd;
+  color: darkblue;
 }
 
 .category-wrapper {
@@ -14154,7 +14154,7 @@ label {
   bottom: 1%;
   right: 3%;
   position: absolute;
-  color: #6574cd;
+  color: darkblue;
   font-weight: bolder;
 }
 
@@ -14165,14 +14165,14 @@ label {
 }
 
 .serie-list .serie-item:hover {
-  border: 2px solid #6574cd;
+  border: 2px solid darkblue;
 }
 
 .serie-list .serie-item {
   width: 200px;
   height: 250px;
   position: relative;
-  background-color: #6574cd;
+  background-color: darkblue;
   margin: 1em;
   border-radius: 5px;
   background-size: cover;
@@ -14281,7 +14281,7 @@ label {
 .modal-wrapper .modal-content .header-wrapper .title {
   font-weight: bolder;
   font-size: large;
-  color: #6574cd;
+  color: darkblue;
 }
 
 .modal-wrapper .modal-content .body {
@@ -14311,7 +14311,7 @@ label {
 }
 
 .modal-wrapper .modal-content .body .title {
-  color: #6574cd;
+  color: darkblue;
 }
 
 .modal-wrapper .modal-content .body .file-size {
@@ -14349,7 +14349,7 @@ label {
   width: 150px;
   margin: 1em;
   border-radius: 5px;
-  background-color: #6574cd;
+  background-color: darkblue;
   background-size: cover;
 }
 
@@ -14369,7 +14369,7 @@ label {
 .tags .tag-list .tag-item .tag-title {
   text-align: center;
   font-weight: bolder;
-  background-color: #6574cd;
+  background-color: darkblue;
   color: white;
   border-top-right-radius: 5px;
   border-top-right-radius: 5px;
@@ -14393,7 +14393,7 @@ label {
 
 .admin-menu .link-active {
   background-color: white;
-  color: #6574cd;
+  color: darkblue;
 }
 
 .admin-menu .link-active:hover {
@@ -14410,7 +14410,7 @@ label {
   width: 150px;
   margin: 1em;
   border-radius: 5px;
-  background-color: #6574cd;
+  background-color: darkblue;
   color: white;
   padding: 0.4em;
   display: flex;
@@ -14435,7 +14435,7 @@ label {
   border: none;
   cursor: pointer;
   width: 150px;
-  color: #6574cd;
+  color: darkblue;
 }
 
 .dropdown {
@@ -14499,21 +14499,21 @@ label {
 .user-app .main-menu .series .title,
 .user-app .main-menu .movies .title {
   font-weight: bolder;
-  color: #6574cd;
+  color: darkblue;
   font-size: larger;
 }
 
 .user-app .main-menu .menu-card span,
 .user-app .main-menu .series span,
 .user-app .main-menu .movies span {
-  color: #6574cd;
+  color: darkblue;
   font-size: small;
 }
 
 .user-app .filter-wrapper .search-form .search-box-wrapper {
   margin-right: 0em !important;
   border-radius: 10px;
-  border: 1px solid #6574cd;
+  border: 1px solid darkblue;
 }
 
 .user-app .filter-wrapper .filters {
@@ -14528,12 +14528,16 @@ label {
   background-color: white;
   border-radius: 5px;
   padding: 0.3em;
-  color: #6574cd;
+  color: darkblue;
 }
 
 .user-app .filter-wrapper .filters .year-filter {
   flex: 1;
   margin-right: 0.5em;
+}
+
+.user-app .filter-wrapper .filters .country-filter {
+  flex: 1;
 }
 
 .user-app .filter-wrapper .filters .category-filter {
@@ -14548,7 +14552,7 @@ label {
 }
 
 .user-app .items-list .item {
-  height: 100px;
+  height: 150px;
   padding: 0.5em;
   margin: 0.2em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -14564,8 +14568,8 @@ label {
 }
 
 .user-app .items-list .item .img img {
-  width: 50px;
-  height: 80px;
+  width: 100px;
+  height: 130px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
@@ -14573,21 +14577,23 @@ label {
 
 .user-app .items-list .item .info {
   flex: 3;
+  margin-left: 0.5em;
 }
 
 .user-app .items-list .item .info .title {
-  color: #6574cd;
-  font-size: small;
+  color: darkblue;
+  font-size: medium;
   font-weight: bold;
 }
 
 .user-app .items-list .item .info .status {
-  font-size: x-small;
-  color: yellowgreen;
+  font-size: small;
+  color: darkblue;
 }
 
 .user-app .items-list .item .info .status .value {
-  color: #6574cd;
+  color: darkblue;
+  color: black;
 }
 
 .user-app .pagination-wrapper {
@@ -14648,7 +14654,7 @@ label {
 .user-modal-wrapper .modal-content .header-wrapper .title {
   font-weight: bolder;
   font-size: large;
-  color: #6574cd;
+  color: darkblue;
 }
 
 .user-modal-wrapper .modal-content .body {
@@ -14678,18 +14684,18 @@ label {
 
 .user-modal-wrapper .modal-content .body .actions-wrapper .add-btn {
   background-color: white;
-  color: #6574cd;
+  color: darkblue;
   padding: 0.3em 0.5em 0.3em 0.5em;
   border-radius: 5px;
-  border: 1px solid #6574cd;
+  border: 1px solid darkblue;
 }
 
 .user-modal-wrapper .modal-content .body .actions-wrapper .add-btn i {
-  color: #6574cd;
+  color: darkblue;
 }
 
 .user-modal-wrapper .modal-content .body .actions-wrapper .added {
-  background-color: #6574cd;
+  background-color: darkblue;
   color: white;
 }
 
@@ -14698,7 +14704,7 @@ label {
 }
 
 .user-modal-wrapper .modal-content .body .title {
-  color: #6574cd;
+  color: darkblue;
 }
 
 .user-modal-wrapper .modal-content .body .file-size {
@@ -14726,12 +14732,12 @@ label {
 }
 
 .nav-link {
-  color: #6574cd !important;
+  color: darkblue !important;
 }
 
 .navbar-brand {
   font-weight: bolder;
-  color: #6574cd !important;
+  color: darkblue !important;
 }
 
 .copylist-table {
@@ -14739,7 +14745,7 @@ label {
 }
 
 .copylist-table tr {
-  border-bottom: 1px solid #6574cd;
+  border-bottom: 1px solid darkblue;
 }
 
 .copylist-table td,

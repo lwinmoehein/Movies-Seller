@@ -12,6 +12,7 @@ use App\CopyItem;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\User\CopyTrait;
+use PHPUnit\Framework\Constraint\Count;
 
 class MoviesController extends Controller
 {
@@ -21,6 +22,7 @@ class MoviesController extends Controller
     public function index(Request $request){
         $years =Year::all();
         $categories = Tag::all();
+        $countries = Country::all();
 
 
 
@@ -33,6 +35,13 @@ class MoviesController extends Controller
         if(isset($request->year_filter)){
             $movies = $movies->where('year',$request->year_filter);
         }
+        if(isset($request->country_filter)){
+            $countryId = $request->country_filter;
+            $movies = $movies->whereHas('country',function($q) use ($countryId){
+                $q->where('id',$countryId);
+            });
+        }
+
         if(isset($request->category_filter)){
             $categoryId = $request->category_filter;
 
@@ -43,7 +52,7 @@ class MoviesController extends Controller
         $movies = $movies->paginate(6)->appends($request->input());
         session()->flashInput($request->input());
 
-        return view('user.movies.index',compact('movies','years','categories'));
+        return view('user.movies.index',compact('movies','years','categories','countries'));
     }
 
 

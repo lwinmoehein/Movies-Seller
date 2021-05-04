@@ -50,11 +50,11 @@
                 </div>
               
             </div>
-            <div class="actions-wrapper">
+            {{-- <div class="actions-wrapper">
                 <button class="add-btn {{$serie->copies && $serie->copies->pluck('user_id')->contains(auth()->user()->id)?'added':''}}" id="add-btn-{{$serie->id}}" onclick="onAddCopyList({{$serie->id}})">
                   <span id="add-label-{{$serie->id}}"> {{$serie->copies && $serie->copies->pluck('user_id')->contains(auth()->user()->id)?'Added To Copy List':'Add to Copy List'}} </span><i class="fa fa-plus"></i>
                 </button>
-            </div>
+            </div> --}}
             <div class="description">
                 <div class="description-label">Description : <div class="description">
                     {{$serie->detail??'N/A'}}</div></div>
