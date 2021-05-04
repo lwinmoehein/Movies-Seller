@@ -4,7 +4,7 @@
     margin-top: 2em;
     margin-bottom: 2em;
     padding: 1em;
-    form {
+    .search-box-wrapper {
         flex:4;
     }
     .add-btn {
@@ -317,4 +317,45 @@ label {
     text-decoration: none;
     cursor: pointer;
   }
+}
+.filter-wrapper{
+    .search-form {
+        .search-box-wrapper{
+            margin-right: 0em !important;
+            border-radius: 10px;
+            border: 1px solid $primary-color;
+        }
+    }
+
+}
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+    padding-left: 1em;
+
+    select {
+        width: 100%;
+        font-size: small;
+       background-color: white;
+        border-radius: 5px;
+       // border: 1px solid $primary-color;
+        padding: 0.3em;
+        color: $primary-color;
+    }
+    .year-filter {
+        flex: 1;
+        margin-right: 0.5em;
+    }
+    .country-filter {
+        flex: 1;
+    }
+    .category-filter{
+        flex:1;
+        margin-left: 0.5em;
+    }
+    .right-space {
+        flex: 2;
+    }
 }

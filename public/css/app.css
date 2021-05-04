@@ -13992,7 +13992,7 @@ a.text-dark:focus {
   padding: 1em;
 }
 
-.add-section form {
+.add-section .search-box-wrapper {
   flex: 4;
 }
 
@@ -14336,6 +14336,47 @@ label {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.filter-wrapper .search-form .search-box-wrapper {
+  margin-right: 0em !important;
+  border-radius: 10px;
+  border: 1px solid darkblue;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+  padding-left: 1em;
+}
+
+.filters select {
+  width: 100%;
+  font-size: small;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0.3em;
+  color: darkblue;
+}
+
+.filters .year-filter {
+  flex: 1;
+  margin-right: 0.5em;
+}
+
+.filters .country-filter {
+  flex: 1;
+}
+
+.filters .category-filter {
+  flex: 1;
+  margin-left: 0.5em;
+}
+
+.filters .right-space {
+  flex: 2;
 }
 
 .tags .tag-list {

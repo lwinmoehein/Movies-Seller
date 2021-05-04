@@ -13,16 +13,38 @@ class SeriesController extends Controller
 {
     //
     public function index(Request $request){
+        $years =Year::all();
+        $categories = Tag::all();
+        $countries = Country::all();
+
+
         $series = Serie::query()->orderBy('updated_at','desc');
         if(isset($request->queryString)) {
             $queryString = $request->queryString;
             $series = $series->where('code_no', 'LIKE', "%{$queryString}%")
                             ->orWhere('title', 'LIKE', "%{$queryString}%");
         }
+        if(isset($request->year_filter)){
+            $series = $series->where('year',$request->year_filter);
+        }
+        if(isset($request->country_filter)){
+            $countryId = $request->country_filter;
+            $series = $series->whereHas('country',function($q) use ($countryId){
+                $q->where('id',$countryId);
+            });
+        }
+        if(isset($request->category_filter)){
+            $categoryId = $request->category_filter;
+
+            $series = $series->whereHas('tags',function($q) use ($categoryId){
+                return $q->where('tags.id',$categoryId);
+            });
+        }
+
         $series = $series->paginate()->appends($request->input());
         session()->flashInput($request->input());
 
-        return view('admin.series.index',compact('series'));
+        return view('admin.series.index',compact('series','years','categories','countries'));
     }
 
     public function create()

@@ -14,16 +14,37 @@ class MovieController extends Controller
 {
     //
     public function index(Request $request){
+        $years =Year::all();
+        $categories = Tag::all();
+        $countries = Country::all();
+
         $movies = Movie::query()->orderBy('updated_at','desc')->with('tags');
         if(isset($request->queryString)) {
             $queryString = $request->queryString;
             $movies = $movies->where('code_no', 'LIKE', "%{$queryString}%")
                             ->orWhere('title', 'LIKE', "%{$queryString}%");
         }
+        if(isset($request->year_filter)){
+            $movies = $movies->where('year',$request->year_filter);
+        }
+        if(isset($request->country_filter)){
+            $countryId = $request->country_filter;
+            $movies = $movies->whereHas('country',function($q) use ($countryId){
+                $q->where('id',$countryId);
+            });
+        }
+
+        if(isset($request->category_filter)){
+            $categoryId = $request->category_filter;
+
+            $movies = $movies->whereHas('tags',function($q) use ($categoryId){
+                return $q->where('tags.id',$categoryId);
+            });
+        }
         $movies = $movies->paginate()->appends($request->input());
         session()->flashInput($request->input());
 
-        return view('admin.movies.index',compact('movies'));
+        return view('admin.movies.index',compact('movies','years','categories','countries'));
     }
 
      /**
