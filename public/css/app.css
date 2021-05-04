@@ -14470,6 +14470,234 @@ label {
   display: block;
 }
 
+.user-app {
+  padding: 1em;
+}
+
+.user-app .main-menu {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.user-app .main-menu .menu-card,
+.user-app .main-menu .series,
+.user-app .main-menu .movies {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 0.5em;
+  min-height: 150px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-app .main-menu .menu-card .title,
+.user-app .main-menu .series .title,
+.user-app .main-menu .movies .title {
+  font-weight: bolder;
+  color: #6574cd;
+  font-size: larger;
+}
+
+.user-app .main-menu .menu-card span,
+.user-app .main-menu .series span,
+.user-app .main-menu .movies span {
+  color: #6574cd;
+  font-size: small;
+}
+
+.user-app .filter-wrapper .search-form .search-box-wrapper {
+  margin-right: 0em !important;
+  border-radius: 10px;
+  border: 1px solid #6574cd;
+}
+
+.user-app .filter-wrapper .filters {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5em;
+}
+
+.user-app .filter-wrapper .filters select {
+  width: 100%;
+  font-size: small;
+}
+
+.user-app .filter-wrapper .filters .year-filter {
+  flex: 1;
+  margin-right: 0.5em;
+}
+
+.user-app .filter-wrapper .filters .category-filter {
+  flex: 1;
+  margin-left: 0.5em;
+}
+
+.user-app .items-list {
+  margin-top: 2em;
+  display: flex;
+  flex-flow: column;
+}
+
+.user-app .items-list .item {
+  height: 100px;
+  padding: 0.5em;
+  margin: 0.2em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-app .items-list .item .img {
+  flex: 1;
+}
+
+.user-app .items-list .item .img img {
+  width: 50px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+
+.user-app .items-list .item .info {
+  flex: 3;
+}
+
+.user-app .items-list .item .info .title {
+  color: #6574cd;
+  font-size: small;
+  font-weight: bold;
+}
+
+.user-app .items-list .item .info .status {
+  font-size: x-small;
+  color: yellowgreen;
+}
+
+.user-app .items-list .item .info .status .value {
+  color: #6574cd;
+}
+
+.user-app .pagination-wrapper {
+  font-size: xx-small;
+}
+
+@media screen and (max-width: 400px) {
+  li.page-item .page-link {
+    padding: 0.5rem 0.5rem !important;
+  }
+}
+
+.user-modal-wrapper {
+  /* The Modal (background) */
+  /* Modal Content */
+  /* The Close Button */
+}
+
+.user-modal-wrapper .modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.user-modal-wrapper .modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  z-index: 10000;
+  margin-bottom: 0em;
+}
+
+.user-modal-wrapper .modal-content .header-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-modal-wrapper .modal-content .header-wrapper .title {
+  font-weight: bolder;
+  font-size: large;
+  color: #6574cd;
+}
+
+.user-modal-wrapper .modal-content .body {
+  display: flex;
+  flex-flow: column;
+}
+
+.user-modal-wrapper .modal-content .body .detail {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  background-size: cover;
+}
+
+.user-modal-wrapper .modal-content .body .detail .info {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  color: white;
+  padding: 1em;
+}
+
+.user-modal-wrapper .modal-content .body .value {
+  font-weight: bolder;
+}
+
+.user-modal-wrapper .modal-content .body .title {
+  color: #6574cd;
+}
+
+.user-modal-wrapper .modal-content .body .file-size {
+  color: yellow;
+}
+
+.user-modal-wrapper .modal-content .body .description {
+  margin-top: 1em;
+  font-size: small;
+  word-wrap: break-word;
+}
+
+.user-modal-wrapper .close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.user-modal-wrapper .close:hover,
+.user-modal-wrapper .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 :root {
   --page-header-bgColor: #242e42;
   --page-header-bgColor-hover: #1d2636;

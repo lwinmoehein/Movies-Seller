@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Serie;
+use App\Movie;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $seriesCount = Serie::all()->count();
+        $moviesCount = Movie::all()->count();
+        return view('home',compact('seriesCount','moviesCount'));
     }
 }

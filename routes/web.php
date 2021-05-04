@@ -41,4 +41,6 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
 Auth::routes();
 
-Route::get('/', 'SPAController@index')->name('index');
+//user routes
+Route::get('/', 'HomeController@index')->name('index');
+Route::resource('/serie','User\SeriesController');
