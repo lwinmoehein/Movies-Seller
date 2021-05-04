@@ -3,7 +3,7 @@
         <span>[{{$movie->code_no}}] </span>{{$movie->title}}
     </div>
     <div class="actions">
-        <a href="{{route('movies.destroy',$movie->id)}}"  onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i></a>
+        <a href="{{route('admin.movies.destroy',$movie->id)}}"  onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i></a>
         <a href="{{route('movie.edit',$movie->id)}}"><i class="fa fa-pencil"></i></a>
     </div>
     <div class="info">

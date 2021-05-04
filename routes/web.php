@@ -22,7 +22,7 @@ Auth::routes();
 Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::get('/','SeriesController@index')->name('index');
         Route::resource('movie', 'MovieController');
-        Route::get('movies/destroy/{movie}','MovieController@destroy')->name('movies.destroy');
+        Route::get('movies/destroy/{movie}','MovieController@destroy')->name('admin.movies.destroy');
 
         Route::resource('serie','SeriesController');
         Route::get('series/destroy/{serie}','SeriesController@destroy')->name('series.destroy');
