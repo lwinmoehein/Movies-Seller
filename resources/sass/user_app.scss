@@ -245,3 +245,13 @@
     font-weight: bolder;
     color: $primary-color !important;
 }
+
+.copylist-table{
+    width: 100%;
+    tr {
+        border-bottom: 1px solid $primary-color;
+    }
+    td,th{
+        padding: 1em;
+    }
+}

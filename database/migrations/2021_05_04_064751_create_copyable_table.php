@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCopyListTable extends Migration
+class CreateCopyableTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateCopyListTable extends Migration
      */
     public function up()
     {
-        Schema::create('copy_list', function (Blueprint $table) {
+        Schema::create('copyable', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('copy_id');
+            $table->string('status')->nullable();
             $table->unsignedBigInteger('user_id');
-            $table->text('type');
+            $table->unsignedBigInteger('copiable_id');
+            $table->string('copiable_type');
             $table->timestamps();
+
         });
     }
 
@@ -29,6 +31,6 @@ class CreateCopyListTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('copy_list');
+        Schema::dropIfExists('copyable');
     }
 }

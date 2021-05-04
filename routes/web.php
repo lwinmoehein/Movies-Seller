@@ -35,6 +35,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
         Route::resource('year','YearController');
         Route::get('years/destroy/{year}','YearController@destroy')->name('years.destroy');
+
+        Route::resource('copyitems','CopyListController');
+        Route::resource('users','UserController');
 });
 
 
@@ -47,3 +50,4 @@ Route::resource('/series','User\SeriesController');
 Route::resource('/movies','User\MoviesController');
 Route::post('/movies/addcopylist','User\MoviesController@addCopyList');
 Route::post('/series/addcopylist','User\SeriesController@addCopyList');
+

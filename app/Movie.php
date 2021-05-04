@@ -20,4 +20,7 @@ class Movie extends Model
     public function country(){
         return $this->belongsTo('App\Country');
     }
+    public function copies(){
+        return $this->morphMany(Movie::class,'copiable');
+    }
 }

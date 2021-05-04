@@ -7,9 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 class CopyItem extends Model
 {
     //
-    public $table = 'copy_list';
+    public $table = 'copyable';
 
     protected $fillable = [
-        'copy_id','user_id','type','status'
+        'status','user_id','copiable_id','copiable_type'
     ];
+
+    function user(){
+        return $this->belongsTo('App\User','user_id');
+    }
+
+    public function copiable(){
+        return $this->morphTo();
+    }
 }

@@ -58,8 +58,8 @@ class SeriesController extends Controller
 
         $copyItem = CopyItem::create([
             'user_id'=>auth()->user()->id,
-            'type'=>'serie',
-            'copy_id'=>$request->serieId,
+            'copiable_id'=>$request->serieId,
+            'copiable_type'=>'App\Serie',
             'status'=>'ordered'
         ]);
 

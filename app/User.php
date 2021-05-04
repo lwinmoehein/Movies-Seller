@@ -36,4 +36,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function copies(){
+        return $this->hasMany('App\CopyItem','user_id');
+    }
 }

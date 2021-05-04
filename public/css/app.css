@@ -14734,6 +14734,19 @@ label {
   color: #6574cd !important;
 }
 
+.copylist-table {
+  width: 100%;
+}
+
+.copylist-table tr {
+  border-bottom: 1px solid #6574cd;
+}
+
+.copylist-table td,
+.copylist-table th {
+  padding: 1em;
+}
+
 :root {
   --page-header-bgColor: #242e42;
   --page-header-bgColor-hover: #1d2636;

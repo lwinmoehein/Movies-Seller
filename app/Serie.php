@@ -21,4 +21,8 @@ class Serie extends Model
     public function country(){
         return $this->belongsTo('App\Country','country_id');
     }
+
+    public function copies(){
+        return $this->morphMany(Serie::class,'copiable');
+    }
 }

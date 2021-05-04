@@ -61,8 +61,8 @@ class MoviesController extends Controller
 
         $copyItem = CopyItem::create([
             'user_id'=>auth()->user()->id,
-            'type'=>'movie',
-            'copy_id'=>$request->movieId,
+            'copiable_id'=>$request->movieId,
+            'copiable_type'=>'App\Movie',
             'status'=>'ordered'
         ]);
 
