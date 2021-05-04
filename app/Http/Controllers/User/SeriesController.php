@@ -20,7 +20,7 @@ class SeriesController extends Controller
 
 
 
-        $series = Serie::query()->orderBy('updated_at','desc');
+        $series = Serie::query()->orderBy('updated_at','desc')->with('copies');
         if(isset($request->queryString)) {
             $queryString = $request->queryString;
             $series = $series->where('code_no', 'LIKE', "%{$queryString}%")

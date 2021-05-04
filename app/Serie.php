@@ -23,6 +23,6 @@ class Serie extends Model
     }
 
     public function copies(){
-        return $this->morphMany(Serie::class,'copiable');
+        return $this->morphMany(CopyItem::class,'copiable');
     }
 }
