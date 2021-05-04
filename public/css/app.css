@@ -14525,6 +14525,10 @@ label {
 .user-app .filter-wrapper .filters select {
   width: 100%;
   font-size: small;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0.3em;
+  color: #6574cd;
 }
 
 .user-app .filter-wrapper .filters .year-filter {
@@ -14666,6 +14670,29 @@ label {
   padding: 1em;
 }
 
+.user-modal-wrapper .modal-content .body .actions-wrapper {
+  margin-top: 2em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.user-modal-wrapper .modal-content .body .actions-wrapper .add-btn {
+  background-color: white;
+  color: #6574cd;
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  border-radius: 5px;
+  border: 1px solid #6574cd;
+}
+
+.user-modal-wrapper .modal-content .body .actions-wrapper .add-btn i {
+  color: #6574cd;
+}
+
+.user-modal-wrapper .modal-content .body .actions-wrapper .added {
+  background-color: #6574cd;
+  color: white;
+}
+
 .user-modal-wrapper .modal-content .body .value {
   font-weight: bolder;
 }
@@ -14696,6 +14723,15 @@ label {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.nav-link {
+  color: #6574cd !important;
+}
+
+.navbar-brand {
+  font-weight: bolder;
+  color: #6574cd !important;
 }
 
 :root {

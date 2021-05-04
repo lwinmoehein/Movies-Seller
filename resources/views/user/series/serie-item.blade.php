@@ -26,7 +26,7 @@
                         Code: <span class="value">{{$serie->code_no}}</span>
                      </div>
                      <div>
-                        Movie Title: <span class="value title">{{$serie->title}}</span>
+                        Serie Title: <span class="value title">{{$serie->title}}</span>
                     </div>
                     <div>
                         Country: <span class="value">{{$serie->country->country_name}}</span>
@@ -49,6 +49,11 @@
                     </div>
                 </div>
               
+            </div>
+            <div class="actions-wrapper">
+                <button class="add-btn" id="add-btn-{{$serie->id}}" onclick="onAddCopyList({{$serie->id}})">
+                  <span id="add-label-{{$serie->id}}"> Add To Copy List </span><i class="fa fa-plus"></i>
+                </button>
             </div>
             <div class="description">
                 <div class="description-label">Description : <div class="description">
@@ -76,6 +81,38 @@
             for (var i=0; i < modals.length; i++) {
                 modals[i].style.display = "none";
             }
+        }
+        async function onAddCopyList(id){
+            const data = {
+                serieId:id
+            };
+            const url = "/series/addcopylist";
+            let csrf =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            // Default options are marked with *
+            const response = await fetch(url, {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                credentials: 'same-origin', // include, *same-origin, omit
+                headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN':csrf,
+                },
+                redirect: 'follow', 
+                referrerPolicy: 'no-referrer', 
+                body: JSON.stringify(data)
+            });
+
+            let responseData= response.json();
+            responseData.then(data=>{
+                if(data.status=='success'){
+                    let addLabelElement =  document.getElementById('add-label-'+id);
+                    let addBtn = document.getElementById('add-btn-'+id);
+                    addLabelElement.innerText="Added to Copy List";
+                    addBtn.classList.add('added');
+                }
+            });
+            
         }
     </script>
 @endpush

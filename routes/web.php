@@ -43,4 +43,7 @@ Auth::routes();
 
 //user routes
 Route::get('/', 'HomeController@index')->name('index');
-Route::resource('/serie','User\SeriesController');
+Route::resource('/series','User\SeriesController');
+Route::resource('/movies','User\MoviesController');
+Route::post('/movies/addcopylist','User\MoviesController@addCopyList');
+Route::post('/series/addcopylist','User\SeriesController@addCopyList');

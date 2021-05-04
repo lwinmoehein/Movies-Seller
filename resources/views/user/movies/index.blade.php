@@ -3,7 +3,7 @@
 @section('content')
 <div class="user-app">
     <div class="filter-wrapper">
-        <form class="search-form" id="search-form" action="{{route('series.index')}}" method="GET">
+        <form class="search-form" id="search-form" action="{{route('movies.index')}}" method="GET">
             @csrf
             <div class="search-box-wrapper">
 
@@ -34,12 +34,12 @@
 
     </div>
     <div class="items-list">
-        @foreach ($series as $serie)
-           @include('user.series.serie-item',$serie)
+        @foreach ($movies as $movie)
+           @include('user.movies.movie-item',$movie)
         @endforeach
     </div>
     <div class="pagination-wrapper">
-        {{$series->onEachSide(1)->links()}}
+        {{$movies->onEachSide(1)->links()}}
     </div>
 </div>
 @endsection

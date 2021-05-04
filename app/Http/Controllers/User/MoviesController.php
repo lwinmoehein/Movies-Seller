@@ -6,40 +6,44 @@ use Illuminate\Http\Request;
 use App\Serie;
 use App\Year;
 use App\Country;
-use App\CopyItem;
 use App\Tag;
+use App\Movie;
+use App\CopyItem;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\User\CopyTrait;
 
-class SeriesController extends Controller
+class MoviesController extends Controller
 {
     //
+    use CopyTrait;
+
     public function index(Request $request){
         $years =Year::all();
         $categories = Tag::all();
 
 
 
-        $series = Serie::query()->orderBy('updated_at','desc');
+        $movies = Movie::query()->orderBy('updated_at','desc');
         if(isset($request->queryString)) {
             $queryString = $request->queryString;
-            $series = $series->where('code_no', 'LIKE', "%{$queryString}%")
+            $movies = $movies->where('code_no', 'LIKE', "%{$queryString}%")
                             ->orWhere('title', 'LIKE', "%{$queryString}%");
         }
         if(isset($request->year_filter)){
-            $series = $series->where('year',$request->year_filter);
+            $movies = $movies->where('year',$request->year_filter);
         }
         if(isset($request->category_filter)){
             $categoryId = $request->category_filter;
 
-            $series = $series->whereHas('tags',function($q) use ($categoryId){
+            $movies = $movies->whereHas('tags',function($q) use ($categoryId){
                 return $q->where('tags.id',$categoryId);
             });
         }
-        $series = $series->paginate(6)->appends($request->input());
+        $movies = $movies->paginate(6)->appends($request->input());
         session()->flashInput($request->input());
 
-        return view('user.series.index',compact('series','years','categories'));
+        return view('user.movies.index',compact('movies','years','categories'));
     }
 
 
@@ -53,13 +57,12 @@ class SeriesController extends Controller
     {
         //
     }
-
     public function addCopyList(Request $request){
 
         $copyItem = CopyItem::create([
             'user_id'=>auth()->user()->id,
-            'type'=>'serie',
-            'copy_id'=>$request->serieId,
+            'type'=>'movie',
+            'copy_id'=>$request->movieId,
             'status'=>'ordered'
         ]);
 
