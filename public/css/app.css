@@ -14565,6 +14565,7 @@ label {
   display: flex;
   justify-content: space-between;
   margin-top: 1.2em;
+  padding: 0em;
 }
 
 .user-app .filter-wrapper .filters label {
@@ -14581,6 +14582,7 @@ label {
   border-radius: 5px;
   padding: 0.3em;
   color: darkblue;
+  text-align: center;
 }
 
 .user-app .filter-wrapper .filters .year-filter {
@@ -14590,11 +14592,12 @@ label {
 
 .user-app .filter-wrapper .filters .country-filter {
   flex: 1;
+  margin-right: 0.5em;
 }
 
 .user-app .filter-wrapper .filters .category-filter {
   flex: 1;
-  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 .user-app .items-list {
