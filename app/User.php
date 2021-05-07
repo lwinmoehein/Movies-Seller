@@ -40,4 +40,12 @@ class User extends Authenticatable
     public function copies(){
         return $this->hasMany('App\CopyItem','user_id');
     }
+
+    public function orderedCopies(){
+        return $this->copies()->where('status','ordered');
+    }
+
+    public function copyOrders(){
+        return $this->hasMany('App\CopyOrder','user_id');
+    }
 }

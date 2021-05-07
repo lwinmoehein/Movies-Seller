@@ -53,12 +53,22 @@
                 </div>
               
             </div>
-            {{-- <div class="actions-wrapper">
-               
-                <button id="add-btn-{{$movie->id}}" class="add-btn {{$movie->copies && $movie->copies->pluck('user_id')->contains(auth()->user()->id)?'added':''}}" onclick="onAddCopyList({{$movie->id}})">
-                    <span id="add-label-{{$movie->id}}">{{$movie->copies && $movie->copies->pluck('user_id')->contains(auth()->user()->id)?'Added To List':'Add to Copy List'}}</span><i class="fa fa-plus"></i>
-                </button>
-            </div> --}}
+            <div class="actions-wrapper">
+                @guest
+                    <button type="submit" class="add-btn disabled" >
+                        <span>Login First To Add To Cart</span>
+                    </button>
+                @else
+                    <form action="{{route('movies.addToCopyList')}}" method="POST">
+                        @csrf
+                        <input type="hidden" value="{{$movie->id}}" name="movieId">
+                        <button type="submit" class="add-btn {{$movie->copies && $movie->copies->pluck('user_id')->contains(auth()->user()->id)?'added':''}}" >
+                            <span>{{$movie->copies && $movie->copies->pluck('user_id')->contains(auth()->user()->id)?'Added To List':'Add to Copy List'}}</span><i class="fa {{$movie->copies && $movie->copies->pluck('user_id')->contains(auth()->user()->id)?'fa-check':'fa-plus'}}"></i>
+                        </button>
+                    </form>
+                @endguest
+                
+            </div>
             <div class="description">
                 <div class="description-label">Description : <div class="description">
                     {{$movie->description??'N/A'}}</div></div>

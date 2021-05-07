@@ -12,6 +12,7 @@ use App\CopyItem;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\User\CopyTrait;
+use Illuminate\Support\Collection;
 use PHPUnit\Framework\Constraint\Count;
 
 class MoviesController extends Controller
@@ -23,6 +24,10 @@ class MoviesController extends Controller
         $years =Year::all();
         $categories = Tag::all();
         $countries = Country::all();
+        $copies = new Collection();
+
+        if(auth()->user())
+            $copies = auth()->user()->orderedCopies;
 
 
 
@@ -52,7 +57,7 @@ class MoviesController extends Controller
         $movies = $movies->paginate(6)->appends($request->input());
         session()->flashInput($request->input());
 
-        return view('user.movies.index',compact('movies','years','categories','countries'));
+        return view('user.movies.index',compact('movies','years','categories','countries','copies'));
     }
 
 
@@ -76,9 +81,9 @@ class MoviesController extends Controller
         ]);
 
         if($copyItem){
-            return response()->json(['status'=>'success']);
+            return redirect()->back();
         }
-        return response()->json(['status'=>'failed']);
+        return redirect()->back();
     }
 
 

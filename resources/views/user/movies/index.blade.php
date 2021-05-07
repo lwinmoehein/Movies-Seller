@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@include('user.reusables.cart-section',['copies'=>$copies])
 <div class="user-app">
     <div class="filter-wrapper">
         <form class="search-form" id="search-form" action="{{route('movies.index')}}" method="GET">
