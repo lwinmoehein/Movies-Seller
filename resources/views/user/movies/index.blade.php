@@ -12,32 +12,7 @@
                     <i class="fa fa-search"></i>
                 </button>
             </div>
-            <div class="filters">
-                <div class="year-filter">
-                    <select name="year_filter"  onchange="onFiltersChanged()">
-                        <option value="" selected>Filter</option>
-                        @foreach ($years as $year)
-                            <option value="{{$year->year}}" {{old('year_filter')==$year->year?'selected':''}}>{{$year->year}}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="country-filter">
-                    <select name="country_filter"  onchange="onFiltersChanged()">
-                        <option value="" selected>Country</option>
-                        @foreach ($countries as $country)
-                            <option value="{{$country->id}}" {{old('country_filter')==$country->id?'selected':''}}>{{$country->country_name}}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="category-filter">
-                    <select name="category_filter"  onchange="onFiltersChanged()">
-                        <option value="" selected>Filter</option>
-                    @foreach ($categories as $category)
-                            <option value="{{$category->id}}" {{old('category_filter')==$category->id?'selected':''}}>{{$category->tag_name}}</option>
-                    @endforeach
-                    </select>
-                </div>
-            </div>
+            @include('user.reusables.filters',['years'=>$years,'countries'=>$countries,'categories'=>$categories])
          </form>
 
     </div>
