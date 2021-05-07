@@ -48,8 +48,13 @@
         .filters {
             display: flex;
             justify-content: space-between;
-            margin-top: 0.5em;
-
+            margin-top: 1.2em;
+            label {
+                font-size: smaller;
+                text-align: center;
+                width: 100%;
+                margin-bottom: 0em;
+            }
             select {
                 width: 100%;
                 font-size: small;
@@ -160,6 +165,7 @@
         height: fit-content;
         z-index: 10000;
         margin-bottom: 0em;
+        min-height: 100%;
 
         .header-wrapper {
             display: flex;

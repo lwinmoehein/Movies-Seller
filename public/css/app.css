@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@charset "UTF-8";
 
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
@@ -14463,6 +14463,10 @@ label {
   margin-right: 0.2em;
 }
 
+.country .test {
+  color: red;
+}
+
 .country .country-add-section {
   display: flex;
   justify-content: flex-end;
@@ -14560,7 +14564,14 @@ label {
 .user-app .filter-wrapper .filters {
   display: flex;
   justify-content: space-between;
-  margin-top: 0.5em;
+  margin-top: 1.2em;
+}
+
+.user-app .filter-wrapper .filters label {
+  font-size: smaller;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0em;
 }
 
 .user-app .filter-wrapper .filters select {
@@ -14685,6 +14696,7 @@ label {
   height: fit-content;
   z-index: 10000;
   margin-bottom: 0em;
+  min-height: 100%;
 }
 
 .user-modal-wrapper .modal-content .header-wrapper {

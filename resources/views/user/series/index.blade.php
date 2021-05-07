@@ -7,7 +7,7 @@
             @csrf
             <div class="search-box-wrapper">
 
-                <input type="text" name="queryString" value="{{old('queryString')??''}}" placeholder="Search by Code or Title">
+                <input type="text" name="queryString" value="{{old('queryString')??''}}" placeholder="Search by Serie Code or Title">
                 <button type="submit" aria-label="submit form">
                     <i class="fa fa-search"></i>
                 </button>
