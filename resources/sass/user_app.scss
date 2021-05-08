@@ -224,6 +224,10 @@
                         color: white;
                     }
                 }
+                .confirmed {
+                    background-color: $primary-color;
+                    color: white;
+                }
                 .disabled {
                     background-color: white;
                     color: $primary-color;

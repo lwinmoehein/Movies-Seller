@@ -14762,6 +14762,11 @@ label {
   color: white;
 }
 
+.user-modal-wrapper .modal-content .body .actions-wrapper .confirmed {
+  background-color: darkblue;
+  color: white;
+}
+
 .user-modal-wrapper .modal-content .body .actions-wrapper .disabled {
   background-color: white;
   color: darkblue;

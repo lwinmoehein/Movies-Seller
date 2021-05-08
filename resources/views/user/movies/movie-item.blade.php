@@ -59,13 +59,30 @@
                         <span>Login First To Add To Cart</span>
                     </button>
                 @else
-                    <form action="{{route('movies.addToCopyList')}}" method="POST">
-                        @csrf
-                        <input type="hidden" value="{{$movie->id}}" name="movieId">
-                        <button type="submit" class="add-btn {{$movie->copies && $movie->copies->pluck('user_id')->contains(auth()->user()->id)?'added':''}}" >
-                            <span>{{$movie->copies && $movie->copies->pluck('user_id')->contains(auth()->user()->id)?'Added To List':'Add to Copy List'}}</span><i class="fa {{$movie->copies && $movie->copies->pluck('user_id')->contains(auth()->user()->id)?'fa-check':'fa-plus'}}"></i>
-                        </button>
-                    </form>
+                
+                    @if($movie->confirmedCopies && $movie->confirmedCopies->pluck('user_id')->contains(auth()->user()->id))
+                        
+                            <button type="submit" class="add-btn confirmed" >
+                                <span>Wating to purchase<i class="fa fa-money"></i></span>
+                            </button>
+                     
+                    @elseif($movie->copies && $movie->copies->pluck('user_id')->contains(auth()->user()->id))
+                        <form action="{{route('users.movies.copyitems.destroy',$movie->id)}}" method="GET">
+                            @csrf
+                            <input type="hidden" value="{{$movie->id}}" name="movieId">
+                            <button type="submit" class="add-btn added" >
+                                <span>Added To Copy List<i class="fa fa-check"></i></span>
+                            </button>
+                        </form>
+                    @else
+                        <form action="{{route('movies.addToCopyList')}}" method="POST">
+                            @csrf
+                            <input type="hidden" value="{{$movie->id}}" name="movieId">
+                            <button type="submit" class="add-btn" >
+                                <span>Add To Copy List<i class="fa fa-plus"></i></span>
+                            </button>
+                        </form>
+                    @endif
                 @endguest
                 
             </div>

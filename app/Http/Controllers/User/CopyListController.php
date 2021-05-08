@@ -40,4 +40,9 @@ class CopyListController extends Controller
 
         return redirect()->back();
     }
+    public function movieCopyDestroy(Movie $movie){
+        $user = auth()->user();
+        $status=CopyItem::where('user_id',$user->id)->where('copiable_type','App\Movie')->where('copiable_id',$movie->id)->delete();
+        return redirect()->back();
+    }
 }

@@ -23,4 +23,11 @@ class Movie extends Model
     public function copies(){
         return $this->morphMany(CopyItem::class,'copiable');
     }
+    public function orderedCopies(){
+        return $this->copies()->where('status','ordered');
+    }
+
+    public function confirmedCopies(){
+        return $this->copies()->where('status','confirmed');
+    }
 }
