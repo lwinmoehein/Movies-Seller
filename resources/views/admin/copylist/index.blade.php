@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="tags">
+<div class="copy-orders">
    @include('admin.reusables.logged-user')
     <table class="copylist-table">
         <thead>
@@ -9,20 +9,11 @@
             <th>No of Items</th>
             <th>Item Codes</th>
             <th>Copy request Date</th>
+            <th>Actions</th>
 
         </thead>
        @foreach ($copyList as $copyItem)
             <tr>
-                {{-- <td>{{$copyItem->user->name}}</td>
-                <td>{{explode('\\',$copyItem->copiable_type)[1]}}</td>
-                <td>{{$copyItem->copiable->code_no}}</td>
-                <th>
-                    @foreach ($copyItem->copiable->tags as $tag)
-                        <span>{{$tag->tag_name}},</span>
-                    @endforeach
-                </th>
-                <td>{{$copyItem->copiable->title}}</td>
-                <td>{{$copyItem->created_at}}</td> --}}
                 <td>{{$copyItem->user->name}}</td>
                 <td>{{$copyItem->copyItems->count()}}</td>
                 <td>
@@ -31,6 +22,15 @@
                     @endforeach
                 </td>
                 <td>{{$copyItem->created_at}}</td>
+                <td>
+                    @if($copyItem->status==\App\CopyOrderStatus::$PURCHASE_CONFIRMED)
+                        <span class="purchased-label">Purchased at {{$copyItem->updated_at}} </span>
+                    @else
+                        <button class="confirm-purchase-btn">
+                            <a href="{{route('copyorders.confirmPurchase',$copyItem)}}">Confirm Purchase</a>
+                        </button>
+                    @endif
+                </td>
             </tr>
        @endforeach
     </table>

@@ -9,7 +9,7 @@ class CopyOrder extends Model
     //
     public $table = 'copy_orders';
 
-    protected $fillable = ['copy_item_id','copy_order_id','user_id'];
+    protected $fillable = ['copy_item_id','copy_order_id','user_id','status'];
 
     function copyItems(){
         return $this->belongsToMany('App\CopyItem','copy_orders_items','copy_item_id','copy_order_id');

@@ -43,8 +43,8 @@
                 <span>Years</span>
             </a>
         </li>
-        <li class="{{Route::is('copyitems.index')?'link-active':''}}">
-            <a href="{{route('copyitems.index')}}" >
+        <li class="{{Route::is('copyorders.index')?'link-active':''}}">
+            <a href="{{route('copyorders.index')}}" >
                 <i class="fa fa-file"></i>
                 <span>Copy Orders</span>
             </a>

@@ -36,7 +36,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::resource('year','YearController');
         Route::get('years/destroy/{year}','YearController@destroy')->name('years.destroy');
 
-        Route::resource('copyitems','CopyListController');
+        Route::resource('copyorders','CopyOrderController');
+        Route::get('copyorders/{copyOrder}/confirmPurchase','CopyOrderController@confirmPurchase')->name('copyorders.confirmPurchase');
+
         Route::resource('users','UserController');
 });
 

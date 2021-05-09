@@ -14379,6 +14379,18 @@ label {
   flex: 2;
 }
 
+.copy-orders .confirm-purchase-btn {
+  color: darkblue;
+  border: 1px solid darkblue;
+  font-weight: bold;
+  padding: 0.5em 1em 0.5em 1em;
+  border-radius: 0.5em;
+}
+
+.copy-orders .purchased-label {
+  color: darkblue;
+}
+
 .tags .tag-list {
   display: flex;
   flex-wrap: wrap;
