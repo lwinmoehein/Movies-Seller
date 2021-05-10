@@ -9,7 +9,9 @@ use App\Country;
 use App\Tag;
 use App\Movie;
 use App\CopyItem;
+use App\CopyItemStatus;
 use App\CopyOrder;
+use App\CopyOrderStatus;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\User\CopyTrait;
@@ -30,10 +32,11 @@ class CopyListController extends Controller
     }
 
     public function confirmOrder(Request $request){
-        $copyItems = CopyItem::where('user_id',auth()->user()->id)->where('status','ordered')->get();
-        $updatedCopyItems = CopyItem::where('user_id',auth()->user()->id)->where('status','ordered')->update(['status'=>'confirmed']);
+        $copyItems = CopyItem::where('user_id',auth()->user()->id)->where('status',CopyItemStatus::ADDED_TO_LIST)->get();
+        $updatedCopyItems = CopyItem::where('user_id',auth()->user()->id)->where('status',CopyItemStatus::ADDED_TO_LIST)->update(['status'=>CopyItemStatus::CONFIRMED_ORDER]);
         $copyOrder = new CopyOrder();
         $copyOrder->user_id=auth()->user()->id;
+        $copyOrder->status = CopyOrderStatus::ORDERED;
         $copyOrder->save();
 
         $copyOrder->copyItems()->attach($copyItems->pluck('id'));
@@ -43,6 +46,11 @@ class CopyListController extends Controller
     public function movieCopyDestroy(Movie $movie){
         $user = auth()->user();
         $status=CopyItem::where('user_id',$user->id)->where('copiable_type','App\Movie')->where('copiable_id',$movie->id)->delete();
+        return redirect()->back();
+    }
+    public function serieCopyDestroy(Serie $serie){
+        $user = auth()->user();
+        $status=CopyItem::where('user_id',$user->id)->where('copiable_type','App\Serie')->where('copiable_id',$serie->id)->delete();
         return redirect()->back();
     }
 }

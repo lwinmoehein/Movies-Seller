@@ -20,14 +20,18 @@ class Movie extends Model
     public function country(){
         return $this->belongsTo('App\Country');
     }
-    public function copies(){
+    public function copyItems(){
         return $this->morphMany(CopyItem::class,'copiable');
     }
-    public function orderedCopies(){
-        return $this->copies()->where('status','ordered');
+    public function orderedCopyItems(){
+        return $this->copyItems()->where('status',CopyItemStatus::ADDED_TO_LIST);
     }
 
-    public function confirmedCopies(){
-        return $this->copies()->where('status','confirmed');
+    public function confirmedCopyItems(){
+        return $this->copyItems()->where('status',CopyItemStatus::CONFIRMED_ORDER);
+    }
+
+    public function purchasedCopyItems(){
+        return $this->copyItems()->where('status',CopyItemStatus::CONFIRMED_PURCHASE);
     }
 }

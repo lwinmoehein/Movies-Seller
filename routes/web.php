@@ -54,6 +54,7 @@ Route::post('/movies/addcopylist','User\MoviesController@addCopyList')->name('mo
 Route::post('/series/addcopylist','User\SeriesController@addCopyList')->name('series.addToCopyList');
 Route::get('copyitems/{copyitem}/destroy','User\CopyListController@destroy')->name('users.copyitems.destroy');
 Route::get('copyitems/movies/{movie}/destroy','User\CopyListController@movieCopyDestroy')->name('users.movies.copyitems.destroy');
+Route::get('copyitems/series/{serie}/destroy','User\CopyListController@serieCopyDestroy')->name('users.series.copyitems.destroy');
 
 Route::get('copyitems/confirm','User\CopyListController@confirmOrder')->name('users.copyitems.confirm');
 

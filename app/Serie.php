@@ -22,7 +22,18 @@ class Serie extends Model
         return $this->belongsTo('App\Country','country_id');
     }
 
-    public function copies(){
+    public function copyItems(){
         return $this->morphMany(CopyItem::class,'copiable');
+    }
+    public function orderedCopyItems(){
+        return $this->copyItems()->where('status',CopyItemStatus::ADDED_TO_LIST);
+    }
+
+    public function confirmedCopyItems(){
+        return $this->copyItems()->where('status',CopyItemStatus::CONFIRMED_ORDER);
+    }
+
+    public function purchasedCopyItems(){
+        return $this->copyItems()->where('status',CopyItemStatus::CONFIRMED_PURCHASE);
     }
 }

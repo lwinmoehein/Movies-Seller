@@ -9,6 +9,7 @@ use App\Country;
 use App\Tag;
 use App\Movie;
 use App\CopyItem;
+use App\CopyItemStatus;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\User\CopyTrait;
@@ -27,7 +28,7 @@ class MoviesController extends Controller
         $copies = new Collection();
 
         if(auth()->user())
-            $copies = auth()->user()->orderedCopies;
+            $copies = auth()->user()->copyItems;
 
 
 
@@ -77,7 +78,7 @@ class MoviesController extends Controller
             'user_id'=>auth()->user()->id,
             'copiable_id'=>$request->movieId,
             'copiable_type'=>'App\Movie',
-            'status'=>'ordered'
+            'status'=>CopyItemStatus::ADDED_TO_LIST
         ]);
 
         if($copyItem){

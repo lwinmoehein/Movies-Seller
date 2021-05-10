@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class CopyOrderStatus extends Model
 {
     //
-    public static $PURCHASE_CONFIRMED = 'PURCHASE_CONFIRMED';
+    public const ORDERED = 'ORDERED';
+    public const PURCHASE_CONFIRMED = 'PURCHASE_CONFIRMED';
 }

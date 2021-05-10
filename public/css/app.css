@@ -14940,6 +14940,7 @@ label {
   border-top: 1px solid darkblue;
   border-bottom: 1px solid darkblue;
   border-left: 1px solid darkblue;
+  cursor: pointer;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
@@ -14955,11 +14956,18 @@ label {
   padding: 0.5em;
 }
 
-.code-item {
+.movie {
   padding: 0.3em;
-  border-radius: 20px;
-  background-color: darkblue;
-  color: white;
+  border-radius: 5px;
+  color: darkblue;
+  margin-top: 1em;
+}
+
+.serie {
+  padding: 0.3em;
+  border-radius: 5px;
+  color: green;
+  margin-top: 1em;
 }
 
 :root {

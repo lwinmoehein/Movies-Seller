@@ -37,15 +37,22 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function copies(){
-        return $this->hasMany('App\CopyItem','user_id');
+    public function copyItems(){
+        return $this->hasMany('App\CopyItem','user_id')->where('status',CopyItemStatus::ADDED_TO_LIST);
     }
 
-    public function orderedCopies(){
-        return $this->copies()->where('status','ordered');
+    public function confirmedCopyItems(){
+        return $this->copyItems()->where('status',CopyItemStatus::CONFIRMED_ORDER);
+    }
+
+    public function purchasedCopyItems(){
+        return $this->copyItems()->where('status',CopyItemStatus::CONFIRMED_PURCHASE);
     }
 
     public function copyOrders(){
         return $this->hasMany('App\CopyOrder','user_id');
+    }
+    public function purchasedCopyOrders(){
+        return $this->copyOrders()->where('status',CopyOrderStatus::PURCHASE_CONFIRMED);
     }
 }

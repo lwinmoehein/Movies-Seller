@@ -12,22 +12,22 @@
             <th>Actions</th>
 
         </thead>
-       @foreach ($copyList as $copyItem)
+       @foreach ($copyList as $copyOrder)
             <tr>
-                <td>{{$copyItem->user->name}}</td>
-                <td>{{$copyItem->copyItems->count()}}</td>
+                <td>{{$copyOrder->user->name}}</td>
+                <td>{{$copyOrder->copyItems->count()}}</td>
                 <td>
-                    @foreach ($copyItem->copyItems as $copy)
-                        <span class="code-item">{{$copy->copiable->code_no}}</span>
+                    @foreach ($copyOrder->copyItems as $copy)
+                        <span class="code-item {{$copy->copiable_type=='App\Movie'?'movie':'serie'}}">{{$copy->copiable->code_no}}</span>,
                     @endforeach
                 </td>
-                <td>{{$copyItem->created_at}}</td>
+                <td>{{$copyOrder->created_at}}</td>
                 <td>
-                    @if($copyItem->status==\App\CopyOrderStatus::$PURCHASE_CONFIRMED)
-                        <span class="purchased-label">Purchased at {{$copyItem->updated_at}} </span>
+                    @if($copyOrder->status==\App\CopyOrderStatus::PURCHASE_CONFIRMED)
+                        <span class="purchased-label">Purchased at {{$copyOrder->updated_at}} </span>
                     @else
                         <button class="confirm-purchase-btn">
-                            <a href="{{route('copyorders.confirmPurchase',$copyItem)}}">Confirm Purchase</a>
+                            <a href="{{route('copyorders.confirmPurchase',$copyOrder)}}">Confirm Purchase</a>
                         </button>
                     @endif
                 </td>

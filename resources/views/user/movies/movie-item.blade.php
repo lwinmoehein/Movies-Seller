@@ -60,13 +60,13 @@
                     </button>
                 @else
                 
-                    @if($movie->confirmedCopies && $movie->confirmedCopies->pluck('user_id')->contains(auth()->user()->id))
+                    @if($movie->confirmedCopyItems && $movie->confirmedCopyItems->pluck('user_id')->contains(auth()->user()->id))
                         
                             <button type="submit" class="add-btn confirmed" >
                                 <span>Wating to purchase<i class="fa fa-money"></i></span>
                             </button>
                      
-                    @elseif($movie->copies && $movie->copies->pluck('user_id')->contains(auth()->user()->id))
+                    @elseif($movie->orderedCopyItems && $movie->orderedCopyItems->pluck('user_id')->contains(auth()->user()->id))
                         <form action="{{route('users.movies.copyitems.destroy',$movie->id)}}" method="GET">
                             @csrf
                             <input type="hidden" value="{{$movie->id}}" name="movieId">
@@ -112,57 +112,57 @@
                 modals[i].style.display = "none";
             }
         }
-        async function onAddCopyList(id){
-            const data = {
-                movieId:id
-            };
-            const url = "/movies/addcopylist";
-            let csrf =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-            // Default options are marked with *
-            const response = await fetch(url, {
-                method: 'POST', // *GET, POST, PUT, DELETE, etc.
-                mode: 'cors', // no-cors, *cors, same-origin
-                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-                credentials: 'same-origin', // include, *same-origin, omit
-                headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN':csrf,
-                },
-                redirect: 'follow', 
-                referrerPolicy: 'no-referrer', 
-                body: JSON.stringify(data)
-            });
+        // async function onAddCopyList(id){
+        //     const data = {
+        //         movieId:id
+        //     };
+        //     const url = "/movies/addcopylist";
+        //     let csrf =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        //     // Default options are marked with *
+        //     const response = await fetch(url, {
+        //         method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        //         mode: 'cors', // no-cors, *cors, same-origin
+        //         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        //         credentials: 'same-origin', // include, *same-origin, omit
+        //         headers: {
+        //         'Content-Type': 'application/json',
+        //         'X-CSRF-TOKEN':csrf,
+        //         },
+        //         redirect: 'follow', 
+        //         referrerPolicy: 'no-referrer', 
+        //         body: JSON.stringify(data)
+        //     });
 
-            let responseData= response.json();
-            responseData.then(data=>{
-                if(data.status=='success'){
-                    let addLabelElement =  document.getElementById('add-label-'+id);
-                    let addBtn = document.getElementById('add-btn-'+id);
-                    addLabelElement.innerText="Added to Copy List";
-                    addBtn.classList.add('added');
-                }
-            });
+        //     let responseData= response.json();
+        //     responseData.then(data=>{
+        //         if(data.status=='success'){
+        //             let addLabelElement =  document.getElementById('add-label-'+id);
+        //             let addBtn = document.getElementById('add-btn-'+id);
+        //             addLabelElement.innerText="Added to Copy List";
+        //             addBtn.classList.add('added');
+        //         }
+        //     });
             
-        }
+        // }
 
-        async function postData(url = '', data = {}) {
-            let csrf =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-            // Default options are marked with *
-            const response = await fetch(url, {
-                method: 'POST', // *GET, POST, PUT, DELETE, etc.
-                mode: 'cors', // no-cors, *cors, same-origin
-                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-                credentials: 'same-origin', // include, *same-origin, omit
-                headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN':csrf,
-                },
-                redirect: 'follow', 
-                referrerPolicy: 'no-referrer', 
-                body: JSON.stringify(data)
-            });
-            return response; 
-        }
+        // async function postData(url = '', data = {}) {
+        //     let csrf =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        //     // Default options are marked with *
+        //     const response = await fetch(url, {
+        //         method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        //         mode: 'cors', // no-cors, *cors, same-origin
+        //         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        //         credentials: 'same-origin', // include, *same-origin, omit
+        //         headers: {
+        //         'Content-Type': 'application/json',
+        //         'X-CSRF-TOKEN':csrf,
+        //         },
+        //         redirect: 'follow', 
+        //         referrerPolicy: 'no-referrer', 
+        //         body: JSON.stringify(data)
+        //     });
+        //     return response; 
+        // }
 
     </script>
 @endpush

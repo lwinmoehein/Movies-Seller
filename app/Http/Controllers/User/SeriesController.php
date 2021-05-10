@@ -7,9 +7,11 @@ use App\Serie;
 use App\Year;
 use App\Country;
 use App\CopyItem;
+use App\CopyItemStatus;
 use App\Tag;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
 
 class SeriesController extends Controller
 {
@@ -18,9 +20,13 @@ class SeriesController extends Controller
         $years =Year::all();
         $categories = Tag::all();
         $countries = Country::all();
+        $copies = new Collection();
+
+        if(auth()->user())
+            $copies = auth()->user()->copyItems;
 
 
-        $series = Serie::query()->orderBy('updated_at','desc')->with('copies');
+        $series = Serie::query()->orderBy('updated_at','desc')->with('copyItems');
         if(isset($request->queryString)) {
             $queryString = $request->queryString;
             $series = $series->where('code_no', 'LIKE', "%{$queryString}%")
@@ -45,7 +51,7 @@ class SeriesController extends Controller
         $series = $series->paginate(6)->appends($request->input());
         session()->flashInput($request->input());
 
-        return view('user.series.index',compact('series','years','categories','countries'));
+        return view('user.series.index',compact('series','years','categories','countries','copies'));
     }
 
 
@@ -66,13 +72,13 @@ class SeriesController extends Controller
             'user_id'=>auth()->user()->id,
             'copiable_id'=>$request->serieId,
             'copiable_type'=>'App\Serie',
-            'status'=>'ordered'
+            'status'=>CopyItemStatus::ADDED_TO_LIST
         ]);
 
         if($copyItem){
-            return response()->json(['status'=>'success']);
+            return redirect()->back();
         }
-        return response()->json(['status'=>'failed']);
+        return redirect()->back();
     }
 
 

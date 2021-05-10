@@ -50,11 +50,39 @@
                 </div>
               
             </div>
-            {{-- <div class="actions-wrapper">
-                <button class="add-btn {{$serie->copies && $serie->copies->pluck('user_id')->contains(auth()->user()->id)?'added':''}}" id="add-btn-{{$serie->id}}" onclick="onAddCopyList({{$serie->id}})">
-                  <span id="add-label-{{$serie->id}}"> {{$serie->copies && $serie->copies->pluck('user_id')->contains(auth()->user()->id)?'Added To Copy List':'Add to Copy List'}} </span><i class="fa fa-plus"></i>
-                </button>
-            </div> --}}
+            <div class="actions-wrapper">
+                @guest
+                    <button type="submit" class="add-btn disabled" >
+                        <span>Login First To Add To Cart</span>
+                    </button>
+                @else
+                
+                    @if($serie->confirmedCopyItems && $serie->confirmedCopyItems->pluck('user_id')->contains(auth()->user()->id))
+                        
+                            <button type="submit" class="add-btn confirmed" >
+                                <span>Wating to purchase<i class="fa fa-money"></i></span>
+                            </button>
+                     
+                    @elseif($serie->orderedCopyItems && $serie->orderedCopyItems->pluck('user_id')->contains(auth()->user()->id))
+                        <form action="{{route('users.series.copyitems.destroy',$serie->id)}}" method="GET">
+                            @csrf
+                            <input type="hidden" value="{{$serie->id}}" name="movieId">
+                            <button type="submit" class="add-btn added" >
+                                <span>Added To Copy List<i class="fa fa-check"></i></span>
+                            </button>
+                        </form>
+                    @else
+                        <form action="{{route('series.addToCopyList')}}" method="POST">
+                            @csrf
+                            <input type="hidden" value="{{$serie->id}}" name="serieId">
+                            <button type="submit" class="add-btn" >
+                                <span>Add To Copy List<i class="fa fa-plus"></i></span>
+                            </button>
+                        </form>
+                    @endif
+                @endguest
+                
+            </div>
             <div class="description">
                 <div class="description-label">Description : <div class="description">
                     {{$serie->detail??'N/A'}}</div></div>
