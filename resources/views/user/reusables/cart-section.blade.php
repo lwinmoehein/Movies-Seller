@@ -40,7 +40,7 @@
 </div>
 <div class="cart-section" onclick="onToggleCart()">
     <div class="add-to-cart">
-        <i class="fa fa-plus"></i>
+        <i class="fa fa-shopping-cart"></i>
         <i class="added-count">{{ $copies->count() }}</i>
     </div>
 </div>

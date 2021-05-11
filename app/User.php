@@ -38,7 +38,11 @@ class User extends Authenticatable
     ];
 
     public function copyItems(){
-        return $this->hasMany('App\CopyItem','user_id')->where('status',CopyItemStatus::ADDED_TO_LIST);
+        return $this->hasMany('App\CopyItem','user_id');
+    }
+
+    public function addedCopyItems(){
+        return $this->copyItems()->where('status',CopyItemStatus::ADDED_TO_LIST);
     }
 
     public function confirmedCopyItems(){

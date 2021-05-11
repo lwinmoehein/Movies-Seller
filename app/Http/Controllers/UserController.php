@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     //
     public function index(Request $request){
-        $users = User::orderBy('updated_at','desc')->withCount('copies')->paginate(8);
+        $users = User::orderBy('updated_at','desc')->withCount('purchasedCopyItems')->paginate(8);
         return view('admin.users.index',compact('users'));
     }
 }

@@ -23,7 +23,7 @@ class SeriesController extends Controller
         $copies = new Collection();
 
         if(auth()->user())
-            $copies = auth()->user()->copyItems;
+            $copies = auth()->user()->addedCopyItems;
 
 
         $series = Serie::query()->orderBy('updated_at','desc')->with('copyItems');

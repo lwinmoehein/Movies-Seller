@@ -12,14 +12,12 @@ use App\CopyItem;
 use App\CopyItemStatus;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\User\CopyTrait;
 use Illuminate\Support\Collection;
 use PHPUnit\Framework\Constraint\Count;
 
 class MoviesController extends Controller
 {
     //
-    use CopyTrait;
 
     public function index(Request $request){
         $years =Year::all();
@@ -28,7 +26,7 @@ class MoviesController extends Controller
         $copies = new Collection();
 
         if(auth()->user())
-            $copies = auth()->user()->copyItems;
+            $copies = auth()->user()->addedCopyItems;
 
 
 
