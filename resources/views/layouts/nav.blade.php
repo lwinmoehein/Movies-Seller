@@ -1,9 +1,7 @@
 <nav>
-    <a href="#0" aria-label="forecastr logo" class="logo">
-        <svg width="140" height="49">
-            <use xlink:href="#logo"></use>
-        </svg>
-    </a>
+    <div class="logo">
+        Context Mobile <small class="city">Pakokku city</small>
+    </div>
     <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
         <svg width="20" height="20" aria-hidden="true">
             <use xlink:href="#down"></use>

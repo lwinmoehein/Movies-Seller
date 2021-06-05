@@ -14970,6 +14970,16 @@ label {
   margin-top: 1em;
 }
 
+.logo {
+  color: white;
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.logo .city {
+  font-size: small;
+}
+
 :root {
   --page-header-bgColor: #242e42;
   --page-header-bgColor-hover: #1d2636;

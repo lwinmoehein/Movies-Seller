@@ -6,7 +6,7 @@
         </form>
 
         <button onclick="openUserMenu()" class="user-menu">
-            Logged in as:  {{auth()->user()->name}} <i onclick="openUserMenu()" class="fa fa-user"></i>
+            Logged in as:  {{auth()->user()->name}}
          </button>
             <div id="user-menu-dropdown" class="dropdown-content">
                     <button type="submit" onclick="logOut()" value="LogOut">Log Out</button>
