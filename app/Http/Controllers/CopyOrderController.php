@@ -12,7 +12,7 @@ class CopyOrderController extends Controller
 {
     //
     public function index(Request $request){
-        $copyList = auth()->user()->copyOrders()->orderBy('created_at','desc')->paginate(8);
+        $copyList = CopyOrder::orderBy('created_at','desc')->paginate(8);
         return view('admin.copylist.index',compact('copyList'));
     }
 
