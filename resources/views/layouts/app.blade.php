@@ -16,7 +16,7 @@
     {{-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
 
     <!-- Styles -->
-    <link rel="shortcut icon" type="image/jpg" href="favicon.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="{{asset('favicon.png')}}"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @stack('scripts')
 
