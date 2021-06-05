@@ -7,6 +7,7 @@
         <thead>
             <th>Name</th>
             <th>Email</th>
+            <th>Role</th>
             <th>Created At</th>
             <th>No of purchased items</th>
         </thead>
@@ -14,6 +15,11 @@
             <tr>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
+                <td>
+                    @foreach ($user->roles as $role)
+                        {{$role->name}},
+                    @endforeach
+                </td>
                 <td>{{$user->created_at}}</td>
                 <td>{{$user->purchased_copy_items_count}}</td>
             </tr>
