@@ -19,8 +19,10 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 //admin panels
-Route::prefix('admin')->middleware(['auth'])->group(function () {
+Route::prefix('admin')->middleware(['auth','admin'])->group(function () {
         Route::get('/','SeriesController@index')->name('index');
+        Route::get('/','SeriesController@index')->name('admin.index');
+
         Route::resource('movie', 'MovieController');
         Route::get('movies/destroy/{movie}','MovieController@destroy')->name('admin.movies.destroy');
 

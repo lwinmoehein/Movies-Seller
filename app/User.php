@@ -37,6 +37,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function roles(){
+        return $this->belongsToMany('App\Role');
+    }
+
     public function copyItems(){
         return $this->hasMany('App\CopyItem','user_id');
     }
