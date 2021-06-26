@@ -53,7 +53,7 @@ class MoviesController extends Controller
                 return $q->where('tags.id',$categoryId);
             });
         }
-        $movies = $movies->paginate(6)->appends($request->input());
+        $movies = $movies->paginate(10)->appends($request->input());
         session()->flashInput($request->input());
 
         return view('user.movies.index',compact('movies','years','categories','countries','copies'));

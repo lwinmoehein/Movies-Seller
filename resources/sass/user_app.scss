@@ -84,6 +84,22 @@
         margin-top: 2em;
         display: flex;
         flex-flow: column;
+        @media (min-width: 800px){
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            .item {
+                height: 150px;
+                padding: 0.5em;
+                height: 100px;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                transition: 0.3s;
+                display: flex;
+                flex-flow: row;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        
         .item {
             height: 150px;
             padding: 0.5em;
@@ -142,7 +158,6 @@
         }
     }
 }
-.user-modal-wrapper{
     /* The Modal (background) */
     .modal {
         display: none; /* Hidden by default */
@@ -270,7 +285,6 @@
     text-decoration: none;
     cursor: pointer;
   }
-}
 
 
 

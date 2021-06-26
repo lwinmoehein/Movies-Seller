@@ -12,8 +12,7 @@
         </div>
     </div>
 </div>
-<div class="user-modal-wrapper">
-    <!-- The Modal -->
+
     <div id="modal-{{$serie->id}}" class="modal">
 
     <!-- Modal content -->
@@ -91,7 +90,6 @@
     </div>
 
     </div>
-</div>
 
 @push('scripts')
     <script>

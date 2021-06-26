@@ -16,7 +16,6 @@
         </div>
     </div>
 </div>
-<div class="user-modal-wrapper">
     <!-- The Modal -->
     <div id="modal-{{$movie->id}}" class="modal">
 
@@ -94,7 +93,6 @@
     </div>
 
     </div>
-</div>
 @push('scripts')
     <script>
         function onMovie(event,id){
