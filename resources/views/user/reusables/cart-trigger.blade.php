@@ -1,4 +1,4 @@
-<div class="cart-section">
+<div class="cart-section animated bounce">
     <a href="{{route('cart')}}">
         <div class="add-to-cart">
             <i class="fa fa-shopping-cart"></i>
