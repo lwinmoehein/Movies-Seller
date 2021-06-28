@@ -80,10 +80,7 @@ class SeriesController extends Controller
             'status'=>CopyItemStatus::ADDED_TO_LIST
         ]);
 
-        if($copyItem){
-            return redirect()->back();
-        }
-        return redirect()->back();
+        return redirect()->route('series.index');
     }
 
 

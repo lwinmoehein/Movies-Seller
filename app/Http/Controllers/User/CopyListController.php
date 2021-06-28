@@ -46,12 +46,12 @@ class CopyListController extends Controller
     public function movieCopyDestroy(Movie $movie){
         $user = auth()->user();
         $status=CopyItem::where('user_id',$user->id)->where('copiable_type','App\Movie')->where('copiable_id',$movie->id)->delete();
-        return redirect()->back();
+        return redirect()->route('movies.index');
     }
     public function serieCopyDestroy(Serie $serie){
         $user = auth()->user();
         $status=CopyItem::where('user_id',$user->id)->where('copiable_type','App\Serie')->where('copiable_id',$serie->id)->delete();
-        return redirect()->back();
+        return redirect()->route('series.index');
     }
 
     public function cart(User $user){
