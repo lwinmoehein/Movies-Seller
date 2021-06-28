@@ -67,12 +67,13 @@ label {
     .search-box-wrapper {
         display: flex;
         background-color: white;
-        padding: 0.5em;
-        height: 3em;
+        padding: 0.2em;
         margin-right: 1em;
+        font-size: small;
         svg {
             width: 30px;
             height: 30px;
+            margin-left: 1em;
         }
         input {
             flex: 8;

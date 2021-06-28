@@ -37,49 +37,88 @@
             }
         }
     }
-    .filter-wrapper{
-        .search-form {
-            .search-box-wrapper{
-                margin-right: 0em !important;
-                border-radius: 10px;
-                border: 1px solid $primary-color;
-            }
-        }
-        .filters {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 1.2em;
-            padding: 0em;
-            label {
-                font-size: smaller;
-                text-align: center;
-                width: 100%;
-                margin-bottom: 0em;
-            }
-            select {
-                width: 100%;
-                font-size: small;
-               background-color: white;
-                border-radius: 5px;
-               // border: 1px solid $primary-color;
-                padding: 0.3em;
-                color: $primary-color;
-                text-align: center;
-            }
 
-            .year-filter {
-                flex: 1;
+    @media (min-width:800px){
+       .search-form {
+            display: flex;
+            flex-flow: row !important;
+            align-items: center;
+            justify-content:space-between;
+            .search-form {
+                .search-box-wrapper{
+                    margin-right: 0em !important;
+                    border-radius: 10px;
+                    border: 1px solid $primary-color;
+                    height: 2em !important;
+                    padding: 0.4em !important;
+                    
+                }
             }
-            .country-filter {
-                flex: 1;
-                margin-right: 0.5em;
-                margin-left: 0.5em;
-            }
-            .category-filter{
-                flex:1;
-            }
-        }
+       }
     }
+    // .filter-wrapper{
+    //     display: flex;
+    //     flex-flow: row !important;
+    //     justify-content: flex-end;
+    //     .search-form {
+    //         .search-box-wrapper{
+    //             margin-right: 0em !important;
+    //             border-radius: 10px;
+    //             border: 1px solid $primary-color;
+    //         }
+    //     }
+    //     .filters{
+    //         display: flex;
+    //         justify-content: flex-end;
+    //         width: 50% !important;
+    //         .year-filter .country-filter .category-filter{
+    //             flex: 1 !important;
+    //         }
+    //     }
+         
+        
+    //     @media (max-width:800px){
+    //         .filters {
+    //             display: flex;
+    //             justify-content: space-between;
+    //             margin-top: 1.2em;
+    //             padding: 0em;
+    
+              
+    //                 label {
+    //                     font-size: smaller;
+    //                     text-align: center;
+    //                     width: 100%;
+    //                     margin-bottom: 0em;
+    //                 }
+    //                 select {
+    //                     width: 100%;
+    //                     font-size: small;
+    //                     background-color: white;
+    //                     border-radius: 5px;
+    //                    // border: 1px solid $primary-color;
+    //                     padding: 0.3em;
+    //                     color: $primary-color;
+    //                     text-align: center;
+    //                 }
+        
+    //                 .year-filter {
+    //                     flex: 1;
+    //                 }
+    //                 .country-filter {
+    //                     flex: 1;
+    //                     margin-right: 0.5em;
+    //                     margin-left: 0.5em;
+    //                 }
+    //                 .category-filter{
+    //                     flex:1;
+    //                 }
+            
+              
+    //         }
+    //     }
+     
+    // }
     .items-list {
         margin-top: 2em;
         display: flex;
@@ -171,6 +210,13 @@
         overflow: auto; /* Enable scroll if needed */
         background-color: rgb(0,0,0); /* Fallback color */
         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+        @media (min-width:800px){
+            width: 50%;
+            height: fit-content;
+            top: 5%;
+            left: 25%;
+        }
     }
 
     /* Modal Content */
@@ -199,13 +245,17 @@
             //margin-top: 2em;
             display: flex;
             flex-flow: column;
+            overflow-y: scroll;
 
             .detail {
+                margin-top: 2em;
                 display: flex;
                 justify-content: space-between;
                 border-radius:5px;
                 background-size: cover;
+                width: 100%;
                 .info {
+                    width: 100%;
                     background-color:rgba(0,0,0,0.5);
                     border-radius: 5px;
                     color: white;
@@ -302,6 +352,14 @@
         overflow: auto; /* Enable scroll if needed */
         background-color: rgb(0,0,0); /* Fallback color */
         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+        @media (min-width:800px){
+            width: 50%;
+            height: fit-content;
+            top: 25%;
+            left: 25%;
+        }
+        
     }
 
     /* Modal Content */

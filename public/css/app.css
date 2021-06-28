@@ -14057,14 +14057,15 @@ label {
 .search-form .search-box-wrapper {
   display: flex;
   background-color: white;
-  padding: 0.5em;
-  height: 3em;
+  padding: 0.2em;
   margin-right: 1em;
+  font-size: small;
 }
 
 .search-form .search-box-wrapper svg {
   width: 30px;
   height: 30px;
+  margin-left: 1em;
 }
 
 .search-form .search-box-wrapper input {
@@ -14567,48 +14568,21 @@ label {
   font-size: small;
 }
 
-.user-app .filter-wrapper .search-form .search-box-wrapper {
-  margin-right: 0em !important;
-  border-radius: 10px;
-  border: 1px solid darkblue;
-}
+@media (min-width: 800px) {
+  .user-app .search-form {
+    display: flex;
+    flex-flow: row !important;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-.user-app .filter-wrapper .filters {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1.2em;
-  padding: 0em;
-}
-
-.user-app .filter-wrapper .filters label {
-  font-size: smaller;
-  text-align: center;
-  width: 100%;
-  margin-bottom: 0em;
-}
-
-.user-app .filter-wrapper .filters select {
-  width: 100%;
-  font-size: small;
-  background-color: white;
-  border-radius: 5px;
-  padding: 0.3em;
-  color: darkblue;
-  text-align: center;
-}
-
-.user-app .filter-wrapper .filters .year-filter {
-  flex: 1;
-}
-
-.user-app .filter-wrapper .filters .country-filter {
-  flex: 1;
-  margin-right: 0.5em;
-  margin-left: 0.5em;
-}
-
-.user-app .filter-wrapper .filters .category-filter {
-  flex: 1;
+  .user-app .search-form .search-form .search-box-wrapper {
+    margin-right: 0em !important;
+    border-radius: 10px;
+    border: 1px solid darkblue;
+    height: 2em !important;
+    padding: 0.4em !important;
+  }
 }
 
 .user-app .items-list {
@@ -14715,6 +14689,17 @@ label {
   /* Black w/ opacity */
 }
 
+@media (min-width: 800px) {
+  .modal {
+    width: 50%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    top: 5%;
+    left: 25%;
+  }
+}
+
 /* Modal Content */
 
 .modal-content {
@@ -14744,16 +14729,20 @@ label {
 .modal-content .body {
   display: flex;
   flex-flow: column;
+  overflow-y: scroll;
 }
 
 .modal-content .body .detail {
+  margin-top: 2em;
   display: flex;
   justify-content: space-between;
   border-radius: 5px;
   background-size: cover;
+  width: 100%;
 }
 
 .modal-content .body .detail .info {
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   color: white;
@@ -14862,6 +14851,17 @@ label {
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */
+}
+
+@media (min-width: 800px) {
+  .cart-modal-wrapper .modal {
+    width: 50%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    top: 25%;
+    left: 25%;
+  }
 }
 
 .cart-modal-wrapper .modal-content {
