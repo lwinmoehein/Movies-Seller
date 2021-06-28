@@ -17,7 +17,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\User\CopyTrait;
 use Illuminate\Support\Collection;
 use PHPUnit\Framework\Constraint\Count;
-
+use App\User;
 class CopyListController extends Controller
 {
     //
@@ -52,5 +52,13 @@ class CopyListController extends Controller
         $user = auth()->user();
         $status=CopyItem::where('user_id',$user->id)->where('copiable_type','App\Serie')->where('copiable_id',$serie->id)->delete();
         return redirect()->back();
+    }
+
+    public function cart(User $user){
+        $copies = new Collection();
+        if(auth()->user())
+            $copies = auth()->user()->addedCopyItems;
+
+        return view('user.reusables.cart',compact('copies'));
     }
 }

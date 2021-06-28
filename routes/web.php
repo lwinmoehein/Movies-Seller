@@ -59,5 +59,5 @@ Route::get('copyitems/movies/{movie}/destroy','User\CopyListController@movieCopy
 Route::get('copyitems/series/{serie}/destroy','User\CopyListController@serieCopyDestroy')->name('users.series.copyitems.destroy');
 
 Route::get('copyitems/confirm','User\CopyListController@confirmOrder')->name('users.copyitems.confirm');
-
+Route::get('cart','User\CopyListController@cart')->name('cart');
 

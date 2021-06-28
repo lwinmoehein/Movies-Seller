@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@include('user.reusables.cart-section',['copies'=>$copies])
+@include('user.reusables.cart-trigger')
 
 <div class="user-app">
     <div class="filter-wrapper">

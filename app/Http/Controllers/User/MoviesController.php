@@ -15,15 +15,18 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Collection;
 use PHPUnit\Framework\Constraint\Count;
 
+
 class MoviesController extends Controller
 {
     //
+    
 
     public function index(Request $request){
+
         $years =Year::orderBy('year','desc')->get();
         $categories = Tag::orderBy('tag_name')->get();
         $countries = Country::orderBy('country_name')->get();
-        
+
         $copies = new Collection();
 
         if(auth()->user())
@@ -59,6 +62,7 @@ class MoviesController extends Controller
 
         return view('user.movies.index',compact('movies','years','categories','countries','copies'));
     }
+    
 
 
     /**

@@ -14839,6 +14839,62 @@ label {
   cursor: pointer;
 }
 
+.cart-content {
+  width: 100%;
+  height: 100%;
+  margin-top: 5em;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  z-index: 10000;
+  margin-bottom: 0em;
+  min-height: 100%;
+}
+
+@media (min-width: 800px) {
+  .cart-content {
+    width: 60%;
+    border: 1px solid #888;
+  }
+}
+
+.cart-content .header-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-content .header-wrapper .title {
+  font-weight: bolder;
+  font-size: large;
+  color: darkblue;
+}
+
+.cart-content .body {
+  margin-top: 2em;
+  display: flex;
+  flex-flow: column;
+}
+
+.cart-content .body .item {
+  display: grid;
+  grid-template-columns: 1fr 2fr 3fr 1fr;
+}
+
+.cart-content .confirm-section {
+  display: flex;
+  margin-top: 2em;
+  justify-content: flex-end;
+}
+
+.cart-content .confirm-section a {
+  padding: 0.5em 1em 0.5em 1em;
+  background-color: darkblue;
+  color: white;
+}
+
 .cart-modal-wrapper {
   /* The Modal (background) */
   /* Modal Content */
