@@ -101,6 +101,7 @@ class SeriesController extends Controller
     public function show(Serie $serie)
     {
         //
+        return view('user.series.detail',compact('serie'));
     }
 
     /**

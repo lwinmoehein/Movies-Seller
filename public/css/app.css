@@ -14528,6 +14528,11 @@ label {
   display: block;
 }
 
+.smaller {
+  font-size: xx-small;
+  font-style: italic;
+}
+
 .user-app {
   padding: 1em 1em 1em 1em;
 }
@@ -14716,37 +14721,35 @@ label {
 
 /* Modal Content */
 
-.modal-content {
+.item-detail {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  z-index: 10000;
-  margin-bottom: 0em;
-  min-height: 100%;
 }
 
-.modal-content .header-wrapper {
+@media (min-width: 800px) {
+  .item-detail {
+    width: 60%;
+  }
+}
+
+.item-detail .header-wrapper {
   display: flex;
   justify-content: space-between;
 }
 
-.modal-content .header-wrapper .title {
+.item-detail .header-wrapper .title {
   font-weight: bolder;
   font-size: large;
   color: darkblue;
 }
 
-.modal-content .body {
+.item-detail .body {
   display: flex;
   flex-flow: column;
-  overflow-y: scroll;
 }
 
-.modal-content .body .detail {
+.item-detail .body .detail {
   margin-top: 2em;
   display: flex;
   justify-content: space-between;
@@ -14755,7 +14758,7 @@ label {
   width: 100%;
 }
 
-.modal-content .body .detail .info {
+.item-detail .body .detail .info {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
@@ -14763,13 +14766,13 @@ label {
   padding: 1em;
 }
 
-.modal-content .body .actions-wrapper {
+.item-detail .body .actions-wrapper {
   margin-top: 2em;
   display: flex;
   justify-content: flex-end;
 }
 
-.modal-content .body .actions-wrapper .add-btn {
+.item-detail .body .actions-wrapper .add-btn {
   background-color: white;
   color: darkblue;
   padding: 0.3em 0.5em 0.3em 0.5em;
@@ -14778,46 +14781,46 @@ label {
   font-size: small;
 }
 
-.modal-content .body .actions-wrapper .add-btn i {
+.item-detail .body .actions-wrapper .add-btn i {
   color: darkblue;
 }
 
-.modal-content .body .actions-wrapper .added {
+.item-detail .body .actions-wrapper .added {
   background-color: green;
   border: none;
   color: white;
   font-size: small;
 }
 
-.modal-content .body .actions-wrapper .added i {
+.item-detail .body .actions-wrapper .added i {
   margin-left: 0.2em;
   color: white;
 }
 
-.modal-content .body .actions-wrapper .confirmed {
+.item-detail .body .actions-wrapper .confirmed {
   background-color: darkblue;
   color: white;
 }
 
-.modal-content .body .actions-wrapper .disabled {
+.item-detail .body .actions-wrapper .disabled {
   background-color: white;
   color: darkblue;
   cursor: not-allowed;
 }
 
-.modal-content .body .value {
+.item-detail .body .value {
   font-weight: bolder;
 }
 
-.modal-content .body .title {
+.item-detail .body .title {
   color: darkblue;
 }
 
-.modal-content .body .file-size {
+.item-detail .body .file-size {
   color: yellow;
 }
 
-.modal-content .body .description {
+.item-detail .body .description {
   margin-top: 1em;
   font-size: small;
   word-wrap: break-word;

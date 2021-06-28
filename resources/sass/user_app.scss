@@ -1,5 +1,10 @@
+.smaller{
+    font-size: xx-small ;
+    font-style: italic;
+}
 .user-app {
     padding:1em 1em 1em 1em;
+
 
     .main-menu {
         display: flex;
@@ -228,16 +233,13 @@
     }
 
     /* Modal Content */
-    .modal-content {
+    .item-detail {
         background-color: #fefefe;
         margin: auto;
         padding: 20px;
-        border: 1px solid #888;
-
-        height: fit-content;
-        z-index: 10000;
-        margin-bottom: 0em;
-        min-height: 100%;
+        @media(min-width:800px){
+            width: 60%;    
+        }  
 
         .header-wrapper {
             display: flex;
@@ -253,7 +255,6 @@
             //margin-top: 2em;
             display: flex;
             flex-flow: column;
-            overflow-y: scroll;
 
             .detail {
                 margin-top: 2em;

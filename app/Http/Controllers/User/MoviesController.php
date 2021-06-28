@@ -71,9 +71,10 @@ class MoviesController extends Controller
      * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function show(Serie $serie)
+    public function show(Movie $movie)
     {
         //
+        return view('user.movies.detail',compact('movie'));
     }
     public function addCopyList(Request $request){
 

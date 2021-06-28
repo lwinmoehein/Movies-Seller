@@ -62,9 +62,13 @@ class SeriesController extends Controller
      * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function show(Serie $serie)
+    public function show(Serie $series)
     {
         //
+        $serie=$series;
+        
+        return view('user.series.detail',compact('serie'));
+
     }
 
     public function addCopyList(Request $request){
