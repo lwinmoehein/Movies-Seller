@@ -14,9 +14,10 @@ class MovieController extends Controller
 {
     //
     public function index(Request $request){
-        $years =Year::all();
-        $categories = Tag::all();
-        $countries = Country::all();
+        
+        $years =Year::orderBy('year','desc')->get();
+        $categories = Tag::orderBy('tag_name')->get();
+        $countries = Country::orderBy('country_name')->get();
 
         $movies = Movie::query()->orderBy('updated_at','desc')->with('tags');
         if(isset($request->queryString)) {

@@ -13,9 +13,10 @@ class SeriesController extends Controller
 {
     //
     public function index(Request $request){
-        $years =Year::all();
-        $categories = Tag::all();
-        $countries = Country::all();
+        
+        $years =Year::orderBy('year','desc')->get();
+        $categories = Tag::orderBy('tag_name')->get();
+        $countries = Country::orderBy('country_name')->get();
 
 
         $series = Serie::query()->orderBy('updated_at','desc');
