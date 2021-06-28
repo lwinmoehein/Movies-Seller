@@ -14538,6 +14538,20 @@ label {
   justify-content: center;
 }
 
+@media (min-width: 800px) {
+  .user-app .main-menu {
+    flex-flow: row !important;
+    margin-top: 5em;
+  }
+
+  .user-app .main-menu .menu-card,
+  .user-app .main-menu .movies,
+  .user-app .main-menu .series {
+    height: 200px;
+    width: 200px;
+  }
+}
+
 .user-app .main-menu .menu-card,
 .user-app .main-menu .series,
 .user-app .main-menu .movies {

@@ -4,6 +4,14 @@
     .main-menu {
         display: flex;
         flex-flow: column;
+        @media (min-width:800px){
+            flex-flow: row !important;
+            margin-top: 5em;
+            .menu-card {
+                height: 200px;
+                width: 200px;
+            }
+        }
         justify-content: center;
         .series {
             @extend .menu-card;
