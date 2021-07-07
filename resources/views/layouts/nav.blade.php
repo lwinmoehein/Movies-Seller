@@ -1,6 +1,6 @@
 <nav>
     <div class="logo">
-        Context Mobile <small class="city">Pakokku city</small>
+        Phoo Pwint Wai
     </div>
     <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
         <svg width="20" height="20" aria-hidden="true">
