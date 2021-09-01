@@ -4,7 +4,7 @@
 > Laravel with blade
 
 
-This repo can be used by Movie,Serie retailers who need a website for their movie retailer shops instead of using old photo albums systems.It contains following functions:
+This repo can be used by Movie,Serie retailers who need a website for their movie retailer shops instead of using old photo albums systems.
 
 ## Scenario
 
@@ -51,6 +51,19 @@ This repo can be used by Movie,Serie retailers who need a website for their movi
 - Browse current orders by users
 - Update order status ordered by users
 
+## Admin Panel Function Deoms
+
+### manage movies
+
+<div align="center">
+    <img src="demo-images/movies.png" width="500">
+</div>
+
+### manage orders
+
+<div align="center">
+    <img src="demo-images/copy-orders.png" width="500">
+</div>
 
 
 # how to run this site on your own machine
