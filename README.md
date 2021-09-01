@@ -12,8 +12,9 @@ This repo can be used by Movie,Serie retailers who need a website for their movi
 
 ## User Functions Demos
 
+### movies list
 <div align="center">
-    <img src="demo-images/user.png" width="400">
+    <img src="demo-images/user-mobile.png" width="400">
 </div>
 
 ## Functions In Admin-Panel App
