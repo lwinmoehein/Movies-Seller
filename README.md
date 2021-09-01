@@ -7,15 +7,17 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## PHP movies seller website template with admin panel
+# Movies Reviewer Website ( with admin panel )
+
+
 
 This repo can be used by Movie,Serie retailers who need a website for their movie retailer shops instead of using old photo albums systems.It contains following functions:
 
-# In User App
+## In User App
 - Browse Movies , Series and read reviews , compatible for both mobile and desktop.
 - Order favorite items(movie,serie) after registering an account.
 
-# In Admin App
+## In Admin App
 - Manage Tags,Categories,Years 
 - Add new movies,Update Movies 
 - Add new series,Update Series
