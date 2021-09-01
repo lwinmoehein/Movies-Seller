@@ -1,11 +1,4 @@
-<p align="center"><img src="demo-images/user.png" width="400"></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+<p align="center"><img src="demo-images/admin.png"></p>
 
 # Movies Reviewer Website ( with admin panel )
 
@@ -13,17 +6,25 @@
 
 This repo can be used by Movie,Serie retailers who need a website for their movie retailer shops instead of using old photo albums systems.It contains following functions:
 
-## In User App
+## Functions In User App
 - Browse Movies , Series and read reviews , compatible for both mobile and desktop.
 - Order favorite items(movie,serie) after registering an account.
 
-## In Admin App
+## User Functions Demos
+
+<div align="center">
+    <img src="demo-images/user.png" width="400">
+</div>
+
+## Functions In Admin-Panel App
 - Manage Tags,Categories,Years 
 - Add new movies,Update Movies 
 - Add new series,Update Series
 - Browse current registered Users
 - Browse current orders by users
 - Update order status ordered by users
+
+
 
 # how to run this site on your own machine
 
