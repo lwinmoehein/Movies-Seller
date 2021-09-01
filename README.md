@@ -6,16 +6,42 @@
 
 This repo can be used by Movie,Serie retailers who need a website for their movie retailer shops instead of using old photo albums systems.It contains following functions:
 
+## Scenario
+
+> A user wants to watch favourite series,movies on his or her device , user doens't have enough mobile data to download them so the user buys them from a local unofficial movie,serie retailer shop .In the old days user had to look at a image album to select his favourite movie,serie, he had to record his selected item unique ids on a note and give the note to the shop. This website tries to automate that proces. User can browser , search,filter movies,series in his home, Mark his favourite movie,serie and done. After that he go to the shop, give his registered account name to the shop, the shop uses admin panel to look at orders list which contains selected movie,serie unique ids.</p>
+
 ## Functions In User App
 - Browse Movies , Series and read reviews , compatible for both mobile and desktop.
 - Order favorite items(movie,serie) after registering an account.
 
 ## User Functions Demos
 
-### movies list
+### -movies list (mobile)
 <div align="center">
-    <img src="demo-images/user-mobile.png" width="400">
+    <img src="demo-images/user.png" width="300">
 </div>
+
+### -movies list (desktop)
+<div align="center">
+    <img src="demo-images/user-desktop.png" width="500">
+</div>
+
+### -movie item detail
+<div align="center">
+    <img src="demo-images/show-movie-detail.png" width="300">
+</div>
+
+### -added to cart
+<div align="center">
+    <img src="demo-images/show-added-cart.png" width="300">
+</div>
+
+### -view cart items
+<div align="center">
+    <img src="demo-images/show-orders.png" width="300">
+</div>
+
+
 
 ## Functions In Admin-Panel App
 - Manage Tags,Categories,Years 
@@ -41,4 +67,4 @@ This repo can be used by Movie,Serie retailers who need a website for their movi
 
 ## License
 
-This site is lincensed under the [MIT license](https://opensource.org/licenses/MIT).
+Lincensed under the [MIT license](https://opensource.org/licenses/MIT).
