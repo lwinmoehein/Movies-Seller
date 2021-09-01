@@ -8,7 +8,7 @@ This repo can be used by Movie,Serie retailers who need a website for their movi
 
 ## Scenario
 
-> A user wants to watch favourite series,movies on his or her device , user doens't have enough mobile data to download them so the user buys them from a local unofficial movie,serie retailer shop .In the old days user had to look at an image album to select his favourite movie,serie, he had to record his selected item unique ids on a note and give the note to the shop. This website tries to automate that proces. User can browser , search,filter movies,series in his home, Mark his favourite movie,serie and done. After that he go to the shop, give his registered account name to the shop, the shop uses admin panel to look at orders list which contains selected movie,serie unique ids.</p>
+> A user wants to watch favourite series,movies on his or her device , user doens't have enough mobile data to download them so the user buys them from a local unofficial movie,serie retailer shop .In the old days user had to look at an image album to select his favourite movie,serie, he had to record his selected item unique ids on a note and give the note to the shop. This website tries to automate that proces. User can browser , search,filter movies,series in his home, Mark his favourite movie,serie and done. After that he go to the shop, give his registered account name to the shop, the shop uses admin panel to look at orders added by the user,the shop look at the list of item Ids on the order entry, then the shop copies the user his favorite movies,series to his device</p>
 
 ## Functions In User App
 - Browse Movies , Series and read reviews , compatible for both mobile and desktop.
