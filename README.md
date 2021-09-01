@@ -1,14 +1,14 @@
 <p align="center"><img src="demo-images/admin.png"></p>
 
 # Movies Reviewer Website ( with admin panel )
-
+> Laravel with blade
 
 
 This repo can be used by Movie,Serie retailers who need a website for their movie retailer shops instead of using old photo albums systems.It contains following functions:
 
 ## Scenario
 
-> A user wants to watch favourite series,movies on his or her device , user doens't have enough mobile data to download them so the user buys them from a local unofficial movie,serie retailer shop .In the old days user had to look at a image album to select his favourite movie,serie, he had to record his selected item unique ids on a note and give the note to the shop. This website tries to automate that proces. User can browser , search,filter movies,series in his home, Mark his favourite movie,serie and done. After that he go to the shop, give his registered account name to the shop, the shop uses admin panel to look at orders list which contains selected movie,serie unique ids.</p>
+> A user wants to watch favourite series,movies on his or her device , user doens't have enough mobile data to download them so the user buys them from a local unofficial movie,serie retailer shop .In the old days user had to look at an image album to select his favourite movie,serie, he had to record his selected item unique ids on a note and give the note to the shop. This website tries to automate that proces. User can browser , search,filter movies,series in his home, Mark his favourite movie,serie and done. After that he go to the shop, give his registered account name to the shop, the shop uses admin panel to look at orders list which contains selected movie,serie unique ids.</p>
 
 ## Functions In User App
 - Browse Movies , Series and read reviews , compatible for both mobile and desktop.
@@ -63,6 +63,14 @@ This repo can be used by Movie,Serie retailers who need a website for their movi
 6. php artisan storage:link (for image upload,access)
 7. php artisan key:generate
 8. php artisan serve
+
+# Code structure
+
+<p>I want to refactor code structure it under service,repository pattern but I think for this small site , it shouldn't be needed that much complexity </p>
+
+> Keep It Simple Stupid
+
+huh?
 
 
 ## License
