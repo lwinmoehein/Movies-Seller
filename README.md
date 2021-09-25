@@ -79,12 +79,7 @@ This repo can be used by Movie,Serie retailers who need a website for their movi
 
 # Code structure
 
-<p>I want to refactor code structure it under service,repository pattern but I think for this small site , it shouldn't be needed that much complexity </p>
-
-> Keep It Simple Stupid
-
-huh?
-
+<p>I want to refactor code structure it under service,repository pattern but I think for this small site , it shouldn't be needed that much complexity . Any contribution are welcomed.</p>
 
 ## License
 
