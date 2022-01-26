@@ -4,7 +4,7 @@
 > Laravel with blade
 
 
-This repo can be used by Movie,Serie retailers who need a website for their movie retailer shops instead of using old photo albums systems.Live demostration can be checked at [phoopwintwai.online](https://phoopwintwai.online).
+This repo can be used by Movie,Serie retailers who need a website for their movie retailer shops instead of using old photo albums systems.Live demonstration can be checked at [phoopwintwai.online](https://phoopwintwai.online).
 
 ## Scenario
 
