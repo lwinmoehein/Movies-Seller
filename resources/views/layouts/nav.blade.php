@@ -1,6 +1,6 @@
 <nav>
     <div class="logo">
-        Context Mobile <small class="city">Pakokku city</small>
+        {{config('app.name')}} <small class="city">Pakokku city</small>
     </div>
     <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
         <svg width="20" height="20" aria-hidden="true">
