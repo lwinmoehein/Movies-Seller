@@ -14,7 +14,7 @@ class CreateCopyOrdersTable extends Migration
     public function up()
     {
         Schema::create('copy_orders', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
