@@ -14,7 +14,7 @@ class CreateCopyableTable extends Migration
     public function up()
     {
         Schema::create('copyable', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id()->nullable();
             $table->string('status')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('copiable_id');
