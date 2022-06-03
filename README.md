@@ -1,10 +1,10 @@
 <p align="center"><img src="demo-images/admin.png"></p>
 
-# Movies Reviewer Website ( with admin panel )
+# Movies Seller Website ( with admin panel )
 > Laravel with blade
 
 
-This repo can be used by Movie,Serie retailers who need a website for their movie retailer shops instead of using old photo albums systems.Live demonstration can be checked at [phoopwintwai.online](https://phoopwintwai.online).
+This repo can be used by Movie,Series retailers who need a website for their movie retailer shops instead of using old photo albums systems.Live demonstration can be checked at [phoopwintwai.com](https://phoopwintwai.com).
 
 ## Functions In User App
 - Browse Movies , Series and read reviews , compatible for both mobile and desktop.
